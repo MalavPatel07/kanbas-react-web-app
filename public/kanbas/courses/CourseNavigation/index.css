@@ -1,0 +1,126 @@
+.wd-kanbas.list-group {
+    border-radius: 0%;
+    border-color: black;
+    margin-right: 20px;
+   
+}
+
+.wd-kanbas.list-group > .list-group-item {
+    background-color: black;
+    border-color: black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item > a {
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: auto;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item-active {
+    background-color: white;
+    border-color: white;
+    text-align: center;
+    padding: 10px;
+    color: red;
+    text-decoration: none;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > a {
+    color: red;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > i {
+    font-size: 2em;
+    color: red;
+}
+
+
+.wd-kanbas.list-group > .list-group-item > i {
+    font-size: 2em;
+    color: red;
+}
+
+.wd-kanbas.list-group > .list-group-item i.fa-user {
+    font-size: 2em;
+    color: white;
+}
+
+
+
+  .wd-width-75px {
+    width: 75px;
+  }
+  
+  .wd-width-85px {
+    width: 85px;
+  }
+  
+  td {
+    padding: 0px;
+  }
+
+  ul.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5;
+    padding-top: 0;
+    margin-bottom: 15;
+    margin-top: 0;
+    margin-left: 20;
+    margin-right: 0;
+    overflow-wrap: break-word; /* This property enables word wrapping */
+    word-wrap: break-word;
+}
+
+ul.list-unstyled li a {
+    color: red;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 190px;
+    
+}
+
+/* Set active link to black */
+ul.list-unstyled li.active a {
+    color: black;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    font-family: "FontAwesome"; /* Assuming FontAwesome is used for the arrow symbol */
+    margin-right: 0.3rem; /* Add some spacing between the separator and the text */
+}
+
+.breadcrumb {
+    width: 100%;
+    padding-right: 60px;
+    border-radius: 0; /* Remove border radius */
+}
+
+.breadcrumb-item.active {
+    color: black; /* Set the active item color */
+}
+
+.breadcrumb-item a {
+    color: red; /* Set the link color */
+    text-decoration: none; /* Remove underline */
+}
