@@ -56,6 +56,11 @@
     color: white;
 }
 
+.wd-kanbas.list-group > .list-group-item-active i.fa-user {
+    font-size: 2em;
+    color: black;
+}
+
 
 
   .wd-width-75px {
@@ -83,7 +88,8 @@ ul.list-unstyled li {
     margin-bottom: 15;
     margin-top: 0;
     margin-left: 20;
-    margin-right: 0;
+    margin-right: 60;
+    width: 190px;
     overflow-wrap: break-word; /* This property enables word wrapping */
     word-wrap: break-word;
 }
@@ -95,9 +101,8 @@ ul.list-unstyled li a {
     padding-right: 10px;
     padding-bottom: 40px;
     padding-top: 40px;
-    width: 190px;
-    
 }
+
 
 /* Set active link to black */
 ul.list-unstyled li.active a {
@@ -123,4 +128,9 @@ ul.list-unstyled li.active a {
 .breadcrumb-item a {
     color: red; /* Set the link color */
     text-decoration: none; /* Remove underline */
+}
+
+a {
+    color: red;
+    text-decoration: none; /* Optional: Removes underline */
 }

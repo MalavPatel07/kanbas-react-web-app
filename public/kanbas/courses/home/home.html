@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="/kanbas/courses/CourseNavigation/index.css" />
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+
 
 
 <div class="d-flex flex-row">
@@ -17,7 +19,7 @@
         <i class="fa fa-user"></i><br />
         Account
       </a>
-      <a href="/kanbas/dashboard" class="list-group-item">
+      <a href="/kanbas/courses/dashboard/index.html" class="list-group-item">
         <i class="fa fa-dashboard"></i><br />
         Dashboard</a
       >
@@ -128,10 +130,19 @@
                         <div class="col-12">
                           <button class="btn btn-secondary">View Progress</button>
                         </div>
+                        <!-- Verify drop down-->
                         <div class="col-12">
-                          <select class="form-control">
-                            <option>Publish All</option>
-                          </select>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Publish All
+                                  </button>
+                                  <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Publish Week 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Publish Week 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Publish Week 3</a></li>
+                                  </ul>
+                            </div>
+                            
                         </div>
                         <div class="col-12">
                           <button class="btn btn-danger">+ Module</button>
@@ -144,55 +155,96 @@
                           <li class="list-group-item list-group-item-secondary">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
                             Week 0 - INTRO
+                            
+                            
+                            
+                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
                             <i
                               class="fa fa-check-circle m-2 float-end text-success"
                               aria-hidden="true"
                             ></i>
-                            <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
-                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            
+
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
                             LEARNING OBJECTIVES
+                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                              class="fa fa-check-circle m-2 float-end text-success"
+                              aria-hidden="true"
+                            ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
-                            <span class="ms-4">Intro to course</span>
+                            <span class="ms-4">Intro to course</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            <i
+                              class="fa fa-check-circle m-2 float-end text-success"
+                              aria-hidden="true"
+                            ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
-                            <span class="ms-4">Intro to HTML</span>
+                            <span class="ms-4">Intro to HTML</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i
-                            ><span class="ms-4"> Intro to CSS</span>
+                            ><span class="ms-4"> Intro to CSS</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i
-                            ><span class="ms-4"> Intro to JavaScript</span>
+                            ><span class="ms-4"> Intro to JavaScript</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> READING
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i> READING <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> SLIDES
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i> SLIDES<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
                             <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
                               ><span class="ms-4">Intro to course</span></a
-                            >
+                            ><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            <i
+                              class="fa fa-check-circle m-2 float-end text-success"
+                              aria-hidden="true"
+                            ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
-                            <span>Intro to HTML</span>
+                            <span>Intro to HTML</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to
-                            JavaScript
+                            JavaScript<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
                           </li>
                         </ul>
                       </div>
@@ -251,18 +303,23 @@
                     </div>
                   </div>
                   <div class="col-lg-2">
-                    <h2>Course Status</h2>
-                        <button>Unpublish</button>
-                        <button>Published</button>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Import Existing Content</a></li>
-                            <li><a href="#">Import from Commons</a></li>
-                            <li><a href="#">Choose Home Page</a></li>
-                            <li><a href="#">New Announcement</a></li>
-                            <li><a href="#">New Analytics</a></li>
-                            <li><a href="#">View Course Notifications</a></li>
+                    <h5>Course Status</h5>
+                    <button type="button" class="btn btn-secondary">Unpublish</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                    <div class="mt-2">
+                        <ul class="list-group rounded-0">
+                            <li class="list-group-item list-group-item-secondary"><a href="#">Import Existing Content</a></li>
+                            <li class="list-group-item list-group-item-secondary"><a href="#">Import from Commons</a></li>
+                            <li class="list-group-item list-group-item-secondary"><a href="#">Choose Home Page</a></li>
+                            <li class="list-group-item list-group-item-secondary"><a href="#">New Announcement</a></li>
+                            <li class="list-group-item list-group-item-secondary"><a href="#">New Analytics</a></li>
+                            <li class="list-group-item list-group-item-secondary"><a href="#">View Course Notifications</a></li>
             
                         </ul>
+
+                    </div>
+                    
+                        
                         <h2>Coming Up</h2>
                         <a href="#">View Calendar</a>
                         <ul class="list-unstyled">
@@ -271,6 +328,8 @@
                             <li><a href="#">Lecture 3</a></li>
                             <li><a href="#">Lecture 4</a></li>
                         </ul>   
+
+                        
                 </div>
             </div>
             
