@@ -131,131 +131,255 @@
                                 </li>
                               </ul>
                         </div>
-                    <div class="col-lg-8">
+
+                       
+                    <div class="col-lg-10"> <hr />
+                        
         <div class="flex-fill">
             
-            <select>
-                <option value="option1">SpeedGrader</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <hr />
-            <h3 for="assignmentName"> Assignment Name </h3>
-            <input value="Assingment 1 - HTML"
-                   id="assignmentName"
+            <!--
+                Published icon and three dotted icon here
+            -->
+            
+            <label> Assignment Name </label>
+            <input value="Assignment 1 - HTML"
+            class="form-control float-end"
                    placeholder="Assignment Name" />
-            <br /><br />
-            <textarea cols="50" rows="5">This is the first assignment to build Kanbas</textarea><br /><br />
+            <br /><br /> <br/>
 
-            <label>Points</label><br />
-            <input value="100" type="number" max="100" min="50" step="5" /><br /><br />
-
-            <label>Assignment Group</label> <br />
-            <select>
-                <option value="option1">ASSIGNMENTS</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <br /><br />
+            <textarea class="form-control float-end h-20">This is the first assignment to build Kanbas</textarea><br /><br /><br />
 
 
 
-            <label>Display Grade as</label> <br />
-            <select>
-                <option value="option1">Percentage</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <br /><br />
+            <div class="container">
+                <div class="row" style="height: 50px;">
+                  <div class="col-sm text-end" style="padding-right: 20;" >
+                    <label>Points</label>
+                  </div>
+                  <div class="col-sm" >
+                    <input class="form-control" value="100" type="number" max="100" min="50" step="5" /><br /><br />
+                  </div>
+                </div>
+
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Assignment Group</label>
+                      </div>
+                      <div class="col-sm">
+                        <select class="form-control ">
+                            <option value="option1">Assignemnts</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        </div>
+                        <br /><br />
+                
+                </div>
+
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Display Grade as</label>
+                      </div>
+                      <div class="col-sm">
+                        <select class="form-control ">
+                            <option value="option1">Percentage</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        </div>
+                        <br /><br />
+                
+                </div>
+
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Submission Type</label>
+                      </div>
+                      <div class="col-sm">
+                        <select class="form-control ">
+                            <option value="option1">Online</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        </div>
+                        <br /><br />
+                </div>
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Online Entry Options</label>
+                      </div>
+                      <div class="col-sm">
+                        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Text Entry</label>
+                        <br />
+                        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Website URL
+                        </label>
+                        <br />
+                        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Media Recordings</label>
+                            
+                        
+                        <br />
+                        <input   class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Student Annotation</label>
+                            
+                        
+                        <br />
+                        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">File Uploads </label> class="form-check-label"
+                        
+                    </div>
+                </div>
+                <br/><br/>
+                
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Submission Attempts</label>
+                      </div>
+                      <div class="col-sm">
+                        <select class="form-control ">
+                            <option value="option1">Unlimited</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        </div>
+                        <br /><br />
+                
+                </div>
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;">
+                      <label>Plaigarism Review</label>
+                      </div>
+                      <div class="col-sm">
+                        <select class="form-control ">
+                            <option value="option1">None</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                        </div>
+                        <br /><br />
+                
+                </div>
+
+                <div class="row" style="height: 50px;">
+                <div class="col-sm text-end" style="padding-right: 20;">
+                  <label>Group Assignment</label>
+                  </div>
+                  <div class="col-sm">
+                    <input type="checkbox" id="textEntry" /> <label>This is a group assignment </label>
+                    <br />
+                  </div>
+                
+                </div>
+
+                <div class="row" style="height: 50px;">
+                <div class="col-sm text-end" style="padding-right: 20;">
+                  <label>Peer Reviews</label>
+                  </div>
+                  <div class="col-sm">
+                    <input type="checkbox" id="textEntry" /> <label>Require Peer Reviews</label>
+                    <br />
+                  </div>
+                </div>
+                
+                <div class="row" style="height: 50px;">
+                <div class="col-sm text-end" style="padding-right: 20;">
+                  <label>Assign</label>
+                  </div>
+                  <div class="col-sm">
+                    <label>Assign To</label><br />
+                    <input class="form-control" value="Everyone" />
+                    <br />
+
+                    <div class="row" style="height: 50px;">
+                        <div class="col-sm">
+                            <label>Due</label>
+                            </div>
+                    </div>
+                    <div class="row" style="height: 50px;">
+                        <div class="col-sm" style="padding-right: 20;">
+                            <input type="date"
+                                   id="text-fields-due"
+                                    value="2021-01-01" />
+                                    <br />
+                            </div>
+                    </div>
+                    <div class="row" style="height: 50px;">
+                        <div class="col-sm" style="padding-right: 20;">
+                          <label>Available from</label>
+                          </div>
+                          <div class="col-sm">
+                            <label>Until</label>
+                            <br /><br />
+                          </div>
+                        </div>
+                    
+
+
+                            
+                    
+
+                    <div class="row" style="height: 50px;">
+                        <div class="col-sm" style="padding-right: 20;">
+                         
+                          <input type="date"
+                            id="text-fields-due"
+                             value="2021-01-01" />
+                             <br />
+                          </div>
+                          <div class="col-sm">
+                            <input type="date"
+                                   id="text-fields-due"
+                                    value="2021-01-01" />
+                                    <br />
+                            <br /><br />
+                        </div>
+                    </div>
+
+                  </div>
+                  <div class="container">
+                    <div class="row" style="height: 50px;">
+                        <div class="col-sm" style="padding-right: 20;" >
+                            <input type="checkbox" id="textEntry" /> <label>Notify users that this content has changed </label>
+                        </div>
+                        <div class="col-sm" >
+                            <button type="button" class="btn btn-secondary">Cancel</button>
+                            <button type="button" class="btn btn-danger flaot-end">Save</button>
+                        </div>
+                      </div>
 
 
 
-            <label>Submission Type</label> <br />
-            <select>
-                <option value="option1">Online</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <br /><br />
-
-
-
-            <label>Online Entry Options</label> <br />
-            <input type="checkbox" id="textEntry" /> <label>Text Entry</label>
-            <br />
-            <input type="checkbox" id="textEntry" /> <label>
-                Website URL
-            </label>
-            <br />
-            <input type="checkbox" id="textEntry" /> <label>
-                Media Recordings
-            </label>
-            <br />
-            <input type="checkbox" id="textEntry" /> <label>
-                Student Annotation
-            </label>
-            <br />
-            <input type="checkbox" id="textEntry" /> <label>File Uploads </label>
-            <br /><br />
-
-            <label>Submission Attempts</label><br />
-            <select>
-                <option value="option1">Unlimited</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <br /><br />
-
-            <label>Plaigarism Review</label><br />
-            <select>
-                <option value="option1">None</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
-            </select>
-            <br /><br />
-
-            <label>Group Assignment</label><br />
-            <input type="checkbox" id="textEntry" /> <label>This is a group assignment </label>
-            <br /><br />
-
-            <label>Peer Reviews</label><br />
-            <input type="checkbox" id="textEntry" /> <label>Require Peer Reviews</label>
-            <br /><br />
-
-            <label>Assign</label><br />
-            <label>Assign To</label><br />
-            <input value="Everyone" /> <br /><br />
-
-
-            <label>Due</label><br />
-            <input type="date"
-                   id="text-fields-due"
-                   value="2021-01-01" />
-            <br /><br />
-
-            <label>Available from</label><br />
-            <input type="date"
-                   id="text-fields-available"
-                   value="2021-01-01" />
-            <br /><br />
-
-            <label>Until</label><br />
-            <input type="date"
-                   id="text-fields-untils"
-                   value="2021-01-01" />
-            <br /><br />
-
-            <table>
-                <tr>
-                    <td><form action="/kanbas/courses/assignments/index.html">
-                        <button>Cancel</button>
-                    </form></td>
-                    <td> <form action="/kanbas/courses/assignments/index.html">
-                        <button>Save</button>
-                    </form></td>
-                    </tr>
-                </table>
+                    </div>
+                  
+                
             </div>
+            <!-- <div class="container">
+                <div class="row" style="height: 50px;">
+                    <div class="col-sm text-end" style="padding-right: 20;" >
+                      <label>Points</label>
+                    </div>
+                    <div class="col-sm" >
+                        <button type="button" class="btn btn-secondary">Secondary</button>
+                        <button type="button" class="btn btn-secondary">Secondary</button>
+                    </div>
+                  </div> -->
+
+
+            </div>
+        </div>
+                  
+                 
+                </div>
+
+                
+
+                
+
+
+                
+              </div>
+             
+
+              
+            </div>
+            
         </div>
     </body>
 </html>
