@@ -11,24 +11,15 @@
     object-fit: cover;
 }
 
-.course-card .card-body {
+/* .course-card .card-body {
     padding: 0;
-}
+} */
 
 .course-card .card-text {
     margin-bottom: 0.25rem;
 }
 
-@media (max-width: 768px) {
-    .course-card {
-        flex: 1 0 48%; /* Adjust the width for medium-sized screens */
-    }
-}
 
-@media (max-width: 576px) {
-    .course-card {
-        flex: 1 0 100%; /* Set the width to 100% for small screens */
-    }
-}
+
 
 
