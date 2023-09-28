@@ -3,6 +3,11 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="/kanbas/courses/CourseNavigation/index.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/088855f6fd.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
         <div class="d-flex flex-row">
@@ -133,24 +138,513 @@
                         </div>
                     <div class="col-lg-8">
         <div class="flex-fill">
-       
-            <h2>Settings</h2>
-            <table>
-                <tr>
-                    <td>
-                        <form action="/kanbas/courses/settings/CourseDetailsTab/index.html">
-                            <button>Course Details</button>
-                        </form>
-                    </td>
-                    <td>
-                        <form action="/kanbas/courses/settings/CourseNavigationTab/index.html">
-                            <button>Course Navigation</button>
-                        </form>
-                    </td>
-                    </tr>
-                </table>    
+          
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<ul class="nav nav-tabs" id="myTabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="tab1" data-toggle="tab" href="#content1" role="tab" aria-controls="content1" aria-selected="true">Course Detail</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab2" data-toggle="tab" href="#content2" role="tab" aria-controls="content2" aria-selected="false">Sections</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab3" data-toggle="tab" href="#content3" role="tab" aria-controls="content3" aria-selected="false">Navigation</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab4" data-toggle="tab" href="#content4" role="tab" aria-controls="content4" aria-selected="false">Apps</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab5" data-toggle="tab" href="#content5" role="tab" aria-controls="content5" aria-selected="false">Feature Option</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tab6" data-toggle="tab" href="#content6" role="tab" aria-controls="content6" aria-selected="false">Integration</a>
+  </li>
+</ul>
+
+<!------------------------------------------------------------------------------------------------------------------->
+<div class="tab-content" id="myTabContent">
+  <!------------------------------------------------------------------------------------------------------------------->
+
+  <div class="tab-pane fade show active" id="content1" role="tabpanel" aria-labelledby="tab1"><div>
+    <div class="flex-fill">
+      <div class="row">
+<div style="padding: 5px;"><label> Course Name </label></div>
+<!-- <div class="container">
+<input value="Assignment 1 - HTML"
+class="form-control float-end"
+     placeholder="Assignment Name" /></div> -->
+<div class="container" style="padding: 5px;" >
+  <input value="Assignment 1 - HTML"
+  class="form-control float-end"
+         placeholder="Assignment Name" /></div>
+<div class="container" style="padding: 5px;">
+<textarea class="form-control float-end h-20">This is the first assignment to build kanbas</textarea></div>
+<div class="container-fluid" style="width: 800px; align-items: center;">
+  <div class="row" style="align-items: center ;padding-top: 10px" >
+    
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+      <label>Points</label>
+                            </div>
+    <div class="col-md-6">
+      <input class="form-control" value="100" type="number" max="100" min="50" step="5" />
+    </div>
+  </div>
+
+<!--------------------------------------------------------------------Assignment Group--------------------------------------------------------------------------------------------->
+
+
+  <div class="row" style="align-items: center ;padding-top: 10px" >
+      
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Assignment Group</label>
+                              </div>
+      <div class="col-md-6">
+          <select class="form-control ">
+              <option value="option1">Assignemnts</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+          </select>
+      </div>
+    </div>
+
+<!----------------------------------------------------------------------Display Grade as------------------------------------------------------------------------------------------->
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+         <label>Display Grade as</label>
+                              </div>
+      <div class="col-md-6">
+          <select class="form-control ">
+              <option value="option1">Points</option>
+              <option value="option2">Percentage</option>
+              <option value="option3">Complete/Incomplete</option>
+              </select>
+      </div>
+    </div>
+
+<!--------------------------------------------------------------------------Submission Type--------------------------------------------------------------------------------------->
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Submission Type</label>
+                              </div>
+      <div class="col-md-6">
+          <select class="form-control ">
+              <option value="option1">Online</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+              </select>                            </div>
+    </div>
+
+<!------------------------------------------------------------------------------Online Entry Options----------------------------------------------------------------------------------->
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Online Entry Options</label>
+                              </div>
+      <div class="col-md-6">
+          <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Text Entry</label>
+  <br />
+  <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Website URL
+  </label>
+  <br />
+  <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Media Recordings</label>
+      
+  
+  <br />
+  <input   class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Student Annotation</label>
+      
+  
+  <br />
+  <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">File Uploads </label>                            </div>
+    </div>
+
+<!-------------------------------------------------------------------------------------Submission Attempts---------------------------------------------------------------------------->
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Submission Attempts</label>
+                              </div>
+      <div class="col-md-6">
+          <select class="form-control ">
+              <option value="option1">Unlimited</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+              </select>                           </div>
+    </div>
+
+<!--------------------------------------------------------------------------------------Plaigarism Review--------------------------------------------------------------------------->
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Plaigarism Review</label>
+                              </div>
+      <div class="col-md-6">
+          <select class="form-control ">
+              <option value="option1">None</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+              </select>                            </div>
+    </div>
+
+<!-----------------------------------------------------------------------------Group Assignment------------------------------------------------------------------------------------>
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Group Assignment</label>
+                              </div>
+      <div class="col-md-6">
+          <input class ="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">This is a group assignment </label>
+      </div>
+    </div>
+
+<!-------------------------------------------------------------------------------Peer Reviews---------------------------------------------------------------------------------->
+
+
+    <div class="row" style="align-items: center ;padding-top: 10px" >
+      <div class="col-md-6" style="text-align: end;padding-right: 20px;">
+        <label>Peer Reviews</label>
+                              </div>
+      <div class="col-md-6">
+          <input class ="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Require Peer Reviews </label>
+      </div>
+    </div>
+
+<!--------------------------------------------------------------------------------------Assign--------------------------------------------------------------------------->
+
+
+<div class="row" style="align-items: center ;padding-bottom: 10px;padding-top: 10px " >
+<div class="col-md-6" style="text-align: end;padding-right: 20px;">
+<label>Assign</label>
+      </div>
+<div class="col-md-6">
+<label>Assign To</label><br />
+<select class="form-control ">
+<option value="option1">Everyone</option>
+<option value="option2">Option 2</option>
+<option value="option3">Option 3</option>
+</select> 
+<div class="row" >
+<div class="col-sm">
+<label>Due</label>
+</div>
+</div>
+<div class="row">
+<div class="col-sm" style="padding-right: 20;">
+<input type="date"
+     id="text-fields-due"
+      value="2021-01-01" />
+      <!-- <br /> -->
+</div>
+</div>
+<div class="row" >
+<div class="col-sm" style="padding-right: 20;">
+<div><label>Available from</label>
+</div>
+<div class="col-sm" style="padding-right: 20;">
+
+<input type="date"
+id="text-fields-due"
+ value="2021-01-01" />
+ <br />
+</div></div>
+
+
+<div class="col-sm">
+<div><label>Until</label>
+</div>
+<!-- <br /><br /> -->
+
+<div class="col-sm" style="padding-right: 20;">
+
+<input type="date"
+id="text-fields-due"
+ value="2021-01-01" />
+ <br />
+</div>
+
+</div>                           </div>
+
+</div>
+
+
+</div>
+
+</div> 
+<hr style="padding-top: 10px;margin-inline-start: 0px"/>  
+
+<div class="container" style="align-self: center;">
+
+<div class="center-frame">
+<div style="padding-top: 10px;">
+<input class = "form-check-input" type="checkbox" id="textEntry" /></div>
+<div style="padding-top: 10px;">
+<label class="form-check-label" style="width: 500; padding-left: 5px;" > Notify users that this content has changed </label>
+</div>
+<!-- Edit Icon not showing up-->
+<div class="container-fluid" style="align-self: center; ">
+<button type="button" class="student-view-1 float-end  " style="background-color: red; color: white; margin-left: 20px; ">Save</button>
+<button type="button" class="student-view-1 float-end ">Cancel</button>
+
+</div>
+</div>
+
+
+</div>
+<hr style="padding-top: 10px; padding-bottom: 10px; margin-inline-start: 0px  "/>  
+
+
+
+</div>
+</div>
+
+
+  </div></div>
+  <!----------------------------------------------------------------------------Section Tab---------------------------------------------------------------------->
+
+  <div class="tab-pane fade" id="content2" role="tabpanel" aria-labelledby="tab2">
+   
+    <div class="flex-fill">
+      </div>
+      </div>
+  <!-------------------------------------------------------------------------------Navigation Name------------------------------------------------------------------->
+
+  <div class="tab-pane fade" id="content3" role="tabpanel" aria-labelledby="tab3">
+    <br/>
+    <div class="flex-fill">
+      <label>Drag and drop items to reorder them in the couse navigation</label>
+      <br/>
+      <br/>
+      <div class="container border border-grey">
+        
+        <div class="row border-bottom border-grey">
+            <div class="col">
+                <label class="pt-2 pb-2">Home</label>
             </div>
         </div>
+    
+        <div class="row border-bottom border-grey">
+            <div class="col">
+              <label class="pt-2 pb-2">Modules</label>
+              <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+            </div>
+        </div> 
+        
+        <div class="row border-bottom border-grey">
+          <div class="col">
+            <label class="pt-2 pb-2">Piazza</label>
+            <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+          </div>
+      </div> 
+
+      <div class="row border-bottom border-grey">
+        <div class="col">
+          <label class="pt-2 pb-2">Zoom Meetings</label>
+          <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+        </div>
+    </div> 
+
+    <div class="row border-bottom border-grey">
+      <div class="col">
+        <label class="pt-2 pb-2">Assignemnts</label>
+        <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+      </div>
+  </div> 
+
+  <div class="row border-bottom border-grey">
+    <div class="col">
+      <label class="pt-2 pb-2">Quizzes</label>
+      <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+    </div>
+</div> 
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+    <label class="pt-2 pb-2">Grades</label>
+    <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+  </div>
+</div> 
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+    <label class="pt-2 pb-2">People</label>
+    <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+  </div>
+</div> 
+
+<div class="row">
+  <div class="col">
+    <label class="pt-2 pb-2">Panopto Video</label>
+    <i class="fa fa-ellipsis-v float-end pt-2 pb-2" aria-hidden="true"></i>
+  </div>
+</div> 
+      </div>
+      <br/>
+
+<label>Drag items here to hide them from students</label>
+<label>Disabling this will cause student who visit those pages to be restricted to the course page</label>
+
+<div class="container border border-grey">
+        
+  <div class="row border-bottom border-grey">
+      <div class="col">
+          <label class="pt-2">Chat</label><br/>
+          <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+          <label class="text-small pb-2">  This page won't appear in navigation </label>     
+      </div>
+  </div>
+
+  <div class="row border-bottom border-grey">
+    <div class="col">
+        <label class="pt-2">SCORM</label><br/>
+        <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+        <label class="text-small pb-2">  This page won't appear in navigation </label>     
+    </div>
+</div>
+  
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Attendance</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Digication</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Top Hat</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Syllabus</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Perusall</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div> 
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Microsoft Teams Meeting</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">FACT Reporting and Photo Roster</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Progress Reports (Navigate)</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Microsoft Teams for Canvas</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">VHL Control</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Gradescope 1.0</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">Credentials</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+<div class="row border-bottom border-grey">
+  <div class="col">
+      <label class="pt-2">iClicker</label><br/>
+      <i class="fa fa-ellipsis-v float-end" aria-hidden="true"></i>
+      <label class="text-small pb-2">  This page won't appear in navigation </label>     
+  </div>
+</div>
+
+
+<!--Here--> 
+</div>
+  </div>
+  </div>
+
+
+
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="tab-pane fade" id="content4" role="tabpanel" aria-labelledby="tab4">
+    <div class="flex-fill">
+
+
+  </div>
+</div>
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="tab-pane fade" id="content5" role="tabpanel" aria-labelledby="tab5">
+    <div class="flex-fill">
+      
+
+  </div></div>
+  <!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="tab-pane fade" id="content6" role="tabpanel" aria-labelledby="tab6">
+    <div class="flex-fill">
+    </div>
+
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
     </body>
 </html>
-

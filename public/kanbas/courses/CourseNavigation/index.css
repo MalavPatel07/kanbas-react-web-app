@@ -730,3 +730,52 @@ li {
         text-align: right;
         padding-right: 30;
     }
+
+    .mytabs {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 25px;
+    }
+    .mytabs input[type="radio"] {
+        display: none;
+    }
+    .mytabs label {
+        padding: 25px;
+        background: #e2e2e2;
+        font-weight: bold;
+        color: red;
+    }
+    
+    .mytabs .tab {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        order: 1;
+        display: none;
+    }
+    .mytabs .tab h2 {
+        font-size: 3em;
+    }
+    
+    .mytabs input[type='radio']:checked + label + .tab {
+        display: block;
+    }
+    
+    .mytabs input[type="radio"]:checked + label {
+        background: #fff;
+    }
+    .my-div {
+        border: 1px solid #000; /* Adds a 1-pixel solid black border */
+        height: 100px; /* Sets the height to 100 pixels */
+        width: 200px; /* Sets the width to 200 pixels */
+      }
+
+      .border-grey {
+        border-bottom: 1px solid grey; /* Adjust border color and size as needed */
+    }
+
+    .text-small {
+        font-size: 0.8em; /* Adjust font size as needed */
+    }
