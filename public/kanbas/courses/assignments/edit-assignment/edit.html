@@ -8,7 +8,7 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="https://kit.fontawesome.com/088855f6fd.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body style="overflow: hidden;">
         <div class="d-flex flex-row">
             <div style="height: 100%;">
                 <div class="wd-kanbas list-group wd-width-85px">
@@ -67,10 +67,10 @@
                            <div class="text-container">
                             <nav aria-label="breadcrumb"  class="w-100">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Course Name</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Term</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Section</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Assignments</li>
+                                  <li class="breadcrumb-item"><a href="#">C5610</a></li>
+                                  <li class="breadcrumb-item"><a href="#">Assignments</a></li>
+                                  
+                                  <li class="breadcrumb-item active" aria-current="page">A1-ENV+HTML</li>
                                 </ol>
                            </div>
                            </div>
@@ -81,51 +81,53 @@
                     <div class="container-fluid" style="padding-top: 20">
                     <div class="row">
                         <div class="col-lg-2">
-                            <ul  class="list-unstyled">
-                                <li>
-                                    <a href="/kanbas/courses/home/home.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="/kanbas/courses/modules/index.html">Modules</a>
-                                </li>
-                                <li>
-                                    <a href="#">Piazza</a>
-                                </li>
-                                <li class="active">
-                                    <a class="active-sidebar-link" href="/kanbas/courses/assignments/index.html">Assignments</a>
-                                </li>
-                                </li>
-                                <li>
-                                    <a href="#">People</a>
-                                </li>
-                                <li>
-                                    <a href="#">Panopto Video</a>
-                                </li>
-                                <li>
-                                    <a href="#">Discussions</a>
-                                </li>
-                                <li>
-                                    <a href="#">Announcements</a>
-                                </li>
-                                <li>
-                                    <a href="#">Pages</a>
-                                </li>
-                                <li>
-                                    <a href="#">Files</a>
-                                </li>
-                                <li>
-                                    <a href="#">Rubrics</a>
-                                </li>
-                                <li>
-                                    <a href="#">Outcomes</a>
-                                </li>
-                                <li>
-                                    <a href="#">Syllabus</a>
-                                </li>
-                                <li>
-                                    <a href="/kanbas/courses/settings/index.html">Settings</a>
-                                </li>
-                              </ul>
+                          <ul  class="list-unstyled">
+                            <li>
+                                <a href="/kanbas/courses/home/home.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="/kanbas/courses/modules/index.html">Modules</a>
+                            </li>
+                            <li>
+                                <a href="#">Piazza</a>
+                            </li>
+                            <li class="active">
+                              <a class="active-sidebar-link" href="/kanbas/courses/assignments/index.html">Assignments</a>
+                          </li>
+                            <li>
+                                <a href="/kanbas/courses/grades/grades.html">Grades</a>
+                            </li>
+                            <li>
+                                <a href="#">People</a>
+                            </li>
+                            <li>
+                                <a href="#">Panopto Video</a>
+                            </li>
+                            <li>
+                                <a href="#">Discussions</a>
+                            </li>
+                            <li>
+                                <a href="#">Announcements</a>
+                            </li>
+                            <li>
+                                <a href="#">Pages</a>
+                            </li>
+                            <li>
+                                <a href="#">Files</a>
+                            </li>
+                            <li>
+                                <a href="#">Rubrics</a>
+                            </li>
+                            <li>
+                                <a href="#">Outcomes</a>
+                            </li>
+                            <li>
+                                <a href="#">Syllabus</a>
+                            </li>
+                            <li>
+                                <a href="/kanbas/courses/settings/index.html">Settings</a>
+                            </li>
+                          </ul>
                         </div>
 
                         <div class="col-lg-10"> 
@@ -360,9 +362,15 @@
                        <br />
                 </div>
                
-            </div>                           </div>
-
-  </div>
+            </div>                           
+          </div>
+          <br />
+          <div class="w-100">
+            <button type="button" class="btn btn-secondary w-100">+ Add</button>
+            </div>
+          
+          
+        </div>
 
   
                     </div>
@@ -378,10 +386,12 @@
                     <div style="padding-top: 10px;">
                     <label class="form-check-label" style="width: 500; padding-left: 5px;" > Notify users that this content has changed </label>
                 </div>
-                    <!-- Edit Icon not showing up-->
+                    
                     <div class="container-fluid" style="align-self: center; ">
-                    <button type="button" class="student-view-1 float-end  " style="background-color: red; color: white; margin-left: 20px; ">Save</button>
-                    <button type="button" class="student-view-1 float-end ">Cancel</button>
+                    
+                    <button type="button" class="btn btn-danger float-end" style="margin-left: 20px;">Save</button>
+                    
+                    <button type="button" class="btn btn-secondary float-end">Cancel</button>
                     
                     </div>
                 </div>
