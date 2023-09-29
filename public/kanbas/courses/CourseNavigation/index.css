@@ -95,7 +95,7 @@ ul.list-unstyled li {
 ul.list-unstyled li a {
     color: red;
     text-decoration: none;
-    padding-left: 0px;/*Padding is maintained here*/
+    padding-left: 3px;/*Padding is maintained here*/
     padding-right: 20px;
     padding-bottom: 10px;/*I made some changes */
     padding-top: 10px;
@@ -154,18 +154,18 @@ ul.list-unstyled li.active a {
     padding-left: 20;
 }
 
-  .profile-logo-container {
+ .profile-logo-container {
     display: flex;
     justify-content: left;
     align-items: left;
     height: 100px;
   }
 
-  .profile-logo img {
-    border-radius: 50%; /* Make the image round */
-    max-height: 100px; /* Adjust the max height as needed */
-    max-width: 100px; /* Adjust the max width to match max height */
-  }
+
+
+  
+
+
   .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
@@ -233,9 +233,11 @@ hr {
     opacity: .25;
     margin-inline-start: 20px;
 }
+
 .Profile-container{
     flex: 0 0 auto;  
 }
+
 .btn-back-property{
     flex-direction: column;
     justify-content: end;
@@ -385,7 +387,8 @@ ul.list-unstyled li.active a {
 
 a {
     color: red;
-    text-decoration: none; /* Optional: Removes underline */
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
 }
 .wd-kanbas.list-group {
     border-radius: 0%;
@@ -541,11 +544,8 @@ ul.list-unstyled li.active a {
     height: 100px;
   }
 
-  .profile-logo img {
-    border-radius: 50%; /* Make the image round */
-    max-height: 100px; /* Adjust the max height as needed */
-    max-width: 100px; /* Adjust the max width to match max height */
-  }
+  
+
   .row {
     --bs-gutter-x: 0;
     --bs-gutter-y: 0;
@@ -723,6 +723,11 @@ label {
 li {
     font-family: Helvetica, Arial, sans-serif;
 }
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .row-1{
     align-items: center ;padding-top: 20px;
 }
@@ -778,4 +783,24 @@ li {
 
     .text-small {
         font-size: 0.8em; /* Adjust font size as needed */
+    }
+
+    .profile-logo {
+        background-color: transparent;
+        border: 2px solid #9fa4ac; /* Grey border color */
+        border-radius: 50%; /* Create a circle using border-radius */
+        max-height: 200px; /* Adjust the max height as needed */
+        max-width: 200px; /* Adjust the max width to match max height */
+
+    }
+
+    .fa-user-size {
+        font-size: 5em;
+        line-height: .03125em;
+        vertical-align: -.1875em;
+        padding-left:13px;
+        padding-top: 1px;
+        padding-right: 13px;
+        padding-bottom: 13px;
+        
     }

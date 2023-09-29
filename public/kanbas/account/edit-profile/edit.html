@@ -22,7 +22,7 @@
                     <i class="fa fa-user"></i><br />
                     Account
                   </a>
-                  <a href="/kanbas/dashboard" class="list-group-item">
+                  <a href="/kanbas/courses/dashboard/index.html" class="list-group-item">
                     <i class="fa fa-dashboard"></i><br />
                     Dashboard</a
                   >
@@ -77,11 +77,11 @@
                         <div class="col-lg-3">
                             <ul class="list-unstyled">
                                 <li>
-                                    <a href="#">Notification</a>
+                                    <a href="#">Notifications</a>
                                 </li>
-                                <li>
-                                    <a href="/kanbas/account/profile/index.html">Profile</a>
-                                </li>
+                                <li class="active">
+                                    <a class="active-sidebar-link" href="/kanbas/account/profile/index.html">Profile</a>
+                                  </li>
                                 <li>
                                     <a href="#">Files</a>
                                 </li>
@@ -109,30 +109,39 @@
                             <!-- <label>Jose Annuziato's Profile</label> -->
                             <div class="profile-logo-container">
                               <div class="profile-logo">
-                                <img src="https://undergraduate.northeastern.edu/app/uploads/sites/3/2018/07/Jose-Annunziato-hero-image-e1531418532558-300x300.jpg" alt="Logo">
+                                <i class="fa-solid fa-user fa-user-size" style="color: #727883;"></i>
                               </div>
-                              <div class="edit-container"><form action="/kanbas/account/edit-profile/edit.html">
-                                <button>Cancel Editing</button>
-                                </form></div>
+                              <div class="edit-container"><form action="/kanbas/account/profile/index.html">
+                                <button class="btn btn-secondary rounded-1"><i class="fa-solid fa-pencil"></i> Cancel Editing</button>
+                            </form></div>
                             </div>
         <div class="flex-fill">
             <div>
-            <h3>Jose Annuziato</h3>
 
-            <label>Name:*</label>
+            <h5>Name:*</h5>
             <div class="w-25">
                 <input class="form-control" name="fullName" placeholder="Jose Annunziato" />
             </div>
             <br/>
             
             <!-- </div> -->
-            <label>Pronouns:</label>
-            <div class="w-25">
-                <select class="form-control">
+            <h5>Pronouns:</h5>
+            <div class="w-100">
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle dropdown-toggle-split w-25" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <label>None</label>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                <!-- <select class="form-control">
                     <option value="option1">None</option>
                     <option value="option2">Option 2</option>
                     <option value="option3">Option 3</option>
-                </select>
+                </select> -->
             </div>
            
             <br/>
@@ -158,11 +167,11 @@
             <div class="w-25">
                 <div class="row">
                     <div class="col-sm">
-                        <h4>Title</h4>
+                        <h5>Title</h5>
 
                     </div>
                     <div class="col-sm">
-                        <h4>URL</h4>
+                        <h5>URL</h5>
 
                     </div>
                 </div>
@@ -175,24 +184,29 @@
                         <i class="fa-solid fa-arrow-right float-left pt-2 pl-2"></i>
                     </div>
                     <div class="col-5">
-                        <input class="form-control" placeholder="YouTube" />
+                        <input class="form-control" placeholder="https://youtube" />
 
                     </div>
                     <div class="col-1">
-                        <i class="fa-solid fa-xmark float-left pt-2 pl-2"></i>
-
+                        <i class="fa-solid fa-xmark float-left pt-2 pl-2 text-danger"></i>
                     </div>
                 </div>
+                <button type="button" class="btn btn-secondary rounded-1 mt-2">Add a new link</button>
+                <br/>
+                <br/>
+                <hr/>
             </div>
          
-            <button type="button" class="btn btn-secondary rounded-1 mt-2">Secondary</button>
-            <br/>
-            <br/>
+           
             <div class="w-25">
-                <button type="button" class="btn btn-secondary rounded-1 float-end mt-3">Save</button>
-                <button type="button" class="btn btn-danger rounded-1 float-end mt-3" style="margin-right: 10px;">Cancel</button>
+                <form action="/kanbas/account/profile/index.html">
+                    <button class="btn btn-secondary rounded-1 float-end mt-1">Save</button>
+                </form>
+                <form action="/kanbas/account/profile/index.html">
+                    <button class="btn btn-danger rounded-1 float-end mt-1" style="margin-right: 10px;">Cancel</button>
+                </form>
             </div>
             </div>
-        <!-- </div> -->
+        
     </body>
 </html>
