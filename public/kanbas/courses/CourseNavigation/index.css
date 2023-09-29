@@ -390,6 +390,12 @@ a {
     text-decoration: none;
     font-family: Helvetica, Arial, sans-serif;
 }
+
+.nav-tabs .nav-link:not(.active) {
+    color: red !important;
+}
+
+
 .wd-kanbas.list-group {
     border-radius: 0%;
     border-color: black;
