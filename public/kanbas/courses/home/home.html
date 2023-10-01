@@ -7,10 +7,11 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="https://kit.fontawesome.com/088855f6fd.js" crossorigin="anonymous"></script>
+  
     </head>
     <body>
 <div class="d-flex flex-row">
-  <div style="height: 100%;">
+  <div style="height: 100%;" class="d-none d-sm-block d-sm-none d-md-block">
       <div class="wd-kanbas list-group wd-width-85px">
         <a
           href="https://www.northeastern.edu/"
@@ -54,7 +55,7 @@
           Help
         </a>
         <div class="btn-back-container-property">
-          <button class="btn-back-primary">Your Button</button>
+          <button class="btn-back-primary"><i class="fa-solid fa-arrow-right-to-bracket fa-rotate-180" style="color: #ff0000;"></i></button>
         </div>
       </div>
     </div>
@@ -73,11 +74,11 @@
 
       <!-- <div class="col"> -->
         <div class="topbar" >
-          <div class="row-sidebar" >
-            <div class="Profile-container">
-              <div class="hamburger-icon">&#9776;</div>
+          <div class="row-sidebar">
+            <div class="Profile-container d-none d-sm-block">
+              <div class="hamburger-icon d-none d-sm-block">&#9776;</div>
               </div>
-              <div class="Profile-container">
+              <div class="Profile-container d-none d-sm-block">
               <div class="text-container">
                <nav aria-label="breadcrumb"  class="w-100">
                    <ol class="breadcrumb">
@@ -87,7 +88,38 @@
                   </nav>
               </div>
               </div>
-              <div class="container-fluid" style="align-self: center; padding-right: 6%">
+              <div class="container-fluid d-none d-sm-block" style="align-self: center; padding-right: 6%">
+                
+               <button type="student-view" class="student-view-1 float-end">👓 Student View </button>
+               </div>
+           
+           </div>
+           
+           <!-- New topbar-->
+           <div class="row-sidebar" style="background-color: black;" >
+            <div class="Profile-container d-block d-sm-none">
+              <a href="/kanbas/courses/KanbasNavigation/index.html">
+                
+                <div class="hamburger-icon">&#9776;</div>
+              </div>
+
+              </a>
+              
+              <div class="Profile-container d-block d-sm-none">
+              <div class="text-container">
+               <nav aria-label="breadcrumb"  class="w-100">
+                   <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="#">C5610</a></li>
+                     <li class="breadcrumb-item active" aria-current="page" style="color: white;">Modules</li>
+                   </ol>
+                  </nav>
+                  <a href="/kanbas/courses/CourseNavigation/index.html">
+                    <i class="fa-solid fa-caret-down float-end" style="margin-right: 2px;"></i>
+                  </a> 
+              </div>
+              </div>
+              <div class="container-fluid d-block d-sm-none" style="align-self: center; padding-right: 6%">
+                
                <button type="student-view" class="student-view-1 float-end">👓 Student View </button>
                </div>
            
@@ -96,7 +128,7 @@
          
           <div class="container-fluid">
             <div class="row-topbar">
-                <div class="col-lg-3">
+                <div class="col-lg-3 d-none d-sm-block d-sm-none d-md-block">
                   <ul class="list-unstyled">
                     <li class="active">
                       <a class="active-sidebar-link" href="/kanbas/courses/home/home.html">Home</a>
@@ -145,46 +177,54 @@
                 </li>
               </ul>
          </div>
-        <div class="col-lg-8">
-                <div class="flex-grow-1">
+        <!-- <div class="col-lg-8" style="min-width: 200px;"> -->
+          <div class="col-lg-8">
+                <!-- <div class="flex-grow-1"> -->
+                  <div class="container">
                     <div class="p-2">
-                        <div class="row row-cols-lg-auto g-3 float-end">
-                        <div class="col-12">
+                        <div class="d-flex flex-wrap justify-content-end">
+                        <div class="col-sm-auto">
                           <button class="btn btn-secondary">Collapse All</button>
                         </div>
-                        <div class="col-12">
-                          <button class="btn btn-secondary">View Progress</button>
-                        </div>
-                        <!-- Verify drop down-->
-                        <div class="col-12">
-                          <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Publish All
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="#">Publish Week 1</a>
-                              <a class="dropdown-item" href="#">Publish Week 2</a>
-                              <a class="dropdown-item" href="#">Publish Week 3</a>
-                            </div>
+                      <div class="col-sm-auto">
+                        <button class="btn btn-secondary">View Progress</button>
+                      </div>
+                      <!-- Verify drop down-->
+                      <div class="col-sm-auto">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-regular fa-circle-check" style="color: #1eff00;"></i>
+                            Publish All
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Publish Week 1</a>
+                            <a class="dropdown-item" href="#">Publish Week 2</a>
+                            <a class="dropdown-item" href="#">Publish Week 3</a>
                           </div>
-                            
                         </div>
-                        <div class="col-12">
-                          <button class="btn btn-danger">+ Module</button>
-                        </div>
+                          
+                      </div>
+                      <div class="col-sm-auto">
+                        <button class="btn btn-danger">+ Module</button>
                       </div>
                     </div>
+                  </div>
+
+                  </div>
+                   
                       <!-- </div> -->
                     <div class="mt-5">
                         <ul class="list-group rounded-0">
                           <li class="list-group-item list-group-item-secondary">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-caret-up fa-rotate-180"></i>
                             Week 0 - HTML
                             
                             
                             
                             <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
                             <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
+                            <i class="fa-solid fa-caret-up fa-rotate-180  m-2 float-end"></i>
                             <i
                               class="fa fa-check-circle m-2 float-end text-success"
                               aria-hidden="true"
@@ -249,6 +289,20 @@
                           ></i>
                           </li>
                           <li class="list-group-item">
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i
+                            ><span class="ms-4"> Full Stack Developer-Chapter 1</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
+                          </li>
+                          <li class="list-group-item">
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i
+                            ><span class="ms-4"> Full Stack Developer-Chapter 2</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
+                            class="fa fa-check-circle m-2 float-end text-success"
+                            aria-hidden="true"
+                          ></i>
+                          </li>
+                          <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i> SLIDES<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
                             class="fa fa-check-circle m-2 float-end text-success"
                             aria-hidden="true"
@@ -256,9 +310,12 @@
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
                             <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
-                              ><span class="ms-4">Intro to course</span></a
-                            ><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              ><span>Introduction to Web Development</span></a
+                            >
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
                             <i
                               class="fa fa-check-circle m-2 float-end text-success"
                               aria-hidden="true"
@@ -266,24 +323,37 @@
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
-                            <span>Intro to HTML</span><i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
-                            class="fa fa-check-circle m-2 float-end text-success"
-                            aria-hidden="true"
-                          ></i>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
+                            <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
+                              ><span>Creating HTTP server with Node.js</span></a
+                            >
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            <i
+                              class="fa fa-check-circle m-2 float-end text-success"
+                              aria-hidden="true"
+                            ></i>
                           </li>
                           <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
-                            class="fa fa-check-circle m-2 float-end text-success"
-                            aria-hidden="true"
-                          ></i>
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
+                            <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
+                              ><span>Creating a React Application</span></a
+                            >
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                            <i
+                              class="fa fa-check-circle m-2 float-end text-success"
+                              aria-hidden="true"
+                            ></i>
                           </li>
-                          <li class="list-group-item">
+                          <!-- <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to
                             JavaScript<i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i><i
                             class="fa fa-check-circle m-2 float-end text-success"
                             aria-hidden="true"
                           ></i>
-                          </li>
+                          </li> -->
                         </ul>
                       </div>
                 
@@ -291,6 +361,7 @@
                         <ul class="list-group rounded-0">
                           <li class="list-group-item list-group-item-secondary">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-caret-up fa-rotate-180"></i>
                             Week 1 - HTML
                           </li>
                           <li class="list-group-item">
@@ -317,56 +388,78 @@
                             <i class="fa fa-bars me-2" aria-hidden="true"></i> READING
                           </li>
                           <li class="list-group-item">
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i
+                            ><span class="ms-4"> Full Stack Developer-Chapter 1</span>
+                          </li>
+                          <li class="list-group-item">
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i
+                            ><span class="ms-4"> Full Stack Developer-Chapter 2</span>
+                          </li>
+
+
+
+                          <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i> SLIDES
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
                             <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
-                              ><span class="ms-4">Intro to course</span></a
+                              ><span>Introduction to Web Development</span></a
                             >
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            
                           </li>
                           <li class="list-group-item">
                             <i class="fa fa-bars me-2" aria-hidden="true"></i>
-                            <span>Intro to HTML</span>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
+                            <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
+                              ><span>Creating HTTP server with Node.js</span></a>
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            
                           </li>
                           <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS
-                          </li>
-                          <li class="list-group-item">
-                            <i class="fa fa-bars me-2" aria-hidden="true"></i> Intro to
-                            JavaScript
+                            <i class="fa fa-bars me-2" aria-hidden="true"></i>
+                            <i class="fa-solid fa-link" style="color: #17c200;"></i>
+                            <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
+                              ><span>Creating a React Application</span></a
+                            >
+                            <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff2600;"></i>
+                            
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    <!-- </div> -->
                   </div>
               <!-- </div> -->
-              <div class="col-lg-3">
+              <div class="col-lg-3 d-none d-xxl-block">
                 <h5>Course Status</h5>
                 <button type="button" class="btn btn-secondary">Unpublish</button>
                 <button type="button" class="btn btn-success">Publish</button>
                 <div class="mt-2">
                     <ul class="list-group rounded-0">
-                        <li class="list-group-item list-group-item-secondary"><a href="#">Import Existing Content</a></li>
-                        <li class="list-group-item list-group-item-secondary"><a href="#">Import from Commons</a></li>
-                        <li class="list-group-item list-group-item-secondary"><a href="#">Choose Home Page</a></li>
-                        <li class="list-group-item list-group-item-secondary"><a href="#">New Announcement</a></li>
-                        <li class="list-group-item list-group-item-secondary"><a href="#">New Analytics</a></li>
-                        <li class="list-group-item list-group-item-secondary"><a href="#">View Course Notifications</a></li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-solid fa-file-import"></i> Import Existing Content</li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-solid fa-file-import"></i> Import from Commons</li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-solid fa-location-crosshairs"></i> Choose Home Page</li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-solid fa-bullhorn"></i> New Announcement</li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-solid fa-chart-simple"></i> New Analytics</li>
+                        <li class="list-group-item list-group-item-secondary"><i class="fa-regular fa-bell"></i> Course Notifications</li>
         
                     </ul>
 
                 </div>
                 
-                    
-                    <h2>Coming Up</h2>
-                    <a href="#">View Calendar</a>
+                    <div class="mt-2">
+                      <h5>Coming Up</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Lecture 1</a></li>
-                        <li><a href="#">Lecture 2</a></li>
-                        <li><a href="#">Lecture 3</a></li>
-                        <li><a href="#">Lecture 4</a></li>
+                        <li><i class="fa-solid fa-calendar-days" style="color: #ff0505;"></i><a href="#">Lecture 1</a></li>
+                        <li><i class="fa-solid fa-calendar-days" style="color: #ff0505;"></i><a href="#">Lecture 2</a></li>
+                        <li><i class="fa-solid fa-calendar-days" style="color: #ff0505;"></i><a href="#">Lecture 3</a></li>
+                        <li><i class="fa-solid fa-calendar-days" style="color: #ff0505;"></i><a href="#">Lecture 4</a></li>
                     </ul>   
+
+                    </div>
+                    
 
             </div>
         </div> 
