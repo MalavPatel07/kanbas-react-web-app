@@ -652,7 +652,7 @@ align-self: end;}
 .student-view-container{
     flex: 0 0 auto;
     align-self: center;
-    width: 100%;
+    width: 100px;
 }
 .col-lg-2 {
     flex: 0 0 auto;
@@ -733,6 +733,23 @@ li {
 p {
     font-family: Helvetica, Arial, sans-serif;
 }
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h5 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h6 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 
 .row-1{
     align-items: center ;padding-top: 20px;
