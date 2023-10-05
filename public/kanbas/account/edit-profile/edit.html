@@ -9,7 +9,7 @@
         <script src="https://kit.fontawesome.com/088855f6fd.js" crossorigin="anonymous"></script>
 
     </head>
-    <body>
+    <body style="overflow: hidden;">
         <div class="d-flex flex-row">
             <div style="height: 100%;">
                 <div class="wd-kanbas list-group wd-width-85px">
@@ -105,8 +105,12 @@
                                 </li>
                             </ul>
                         </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+                        
                         <div class="col-lg-9">
                             <!-- <label>Jose Annuziato's Profile</label> -->
+                            
                             <div class="profile-logo-container">
                               <div class="profile-logo">
                                 <i class="fa-solid fa-user fa-user-size" style="color: #727883;"></i>
@@ -115,7 +119,8 @@
                                 <button class="btn btn-secondary rounded-1"><i class="fa-solid fa-pencil"></i> Cancel Editing</button>
                             </form></div>
                             </div>
-        <div class="flex-fill">
+                            <div class="container" style="height: 58%;overflow-y: scroll;">              
+              <div class="flex-fill">
             <div>
 
             <h5>Name:*</h5>
@@ -126,22 +131,16 @@
             
             <!-- </div> -->
             <h5>Pronouns:</h5>
-            <div class="w-100">
+            <div class="w-25">
                 <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle dropdown-toggle-split w-25" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <label style="padding-right: 250px;">None</label>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <select class="form-select">
+                      <option selected>None</option>
+                      <option value="1">Mr.</option>
+                      <option value="2">Mrs.</option>
+                      <option value="3">Dr.</option>
+                   </select>
+
                   </div>
-                <!-- <select class="form-control">
-                    <option value="option1">None</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select> -->
             </div>
            
             <br/>
@@ -207,6 +206,12 @@
                 </form>
             </div>
             </div>
+              </div>
+                            </div>
+            </div>
+                    </div>
+                </div>
+           
         
     </body>
 </html>
