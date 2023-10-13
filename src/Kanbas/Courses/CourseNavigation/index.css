@@ -1,0 +1,828 @@
+.wd-course-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    width: 120px;
+    margin: 0px;
+    margin-left: 20px;
+    border-radius: 0px;
+    border: none;
+  }
+  .wd-course-navigation a {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+  }
+  .wd-course-navigation a.active {
+    border-left: 2px solid black;
+    background-color: white;
+  }
+  .wd-course-navigation a.active {
+    color: black;
+  }
+  
+  .wd-course-navigation a {
+    color: red;
+    text-decoration: none;
+  }
+
+
+  .wd-kanbas.list-group {
+    border-radius: 0%;
+    border-color: black;
+    margin-right: 0px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.wd-kanbas.list-group > .list-group-item {
+    background-color: black;
+    border-color: black;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item > a {
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: auto;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item-active {
+    background-color: white;
+    border-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color: red;
+    text-decoration: none;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > a {
+    color: red;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.5em;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > i {
+    font-size: 1.5em;
+    color: red;
+}
+
+
+.wd-kanbas.list-group > .list-group-item > i {
+    font-size: 1.5em;
+    color: red;
+}
+
+.wd-kanbas.list-group > .list-group-item i.fa-user {
+    font-size: 1em;
+    color: white;
+}
+
+
+
+  .wd-width-75px {
+    width: 75px;
+  }
+  
+  .wd-width-85px {
+    width: 85px;
+  }
+  
+  td {
+    padding: 0px;
+  }
+
+  ul.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5;
+    padding-top: 0;
+    margin-bottom: 15;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 50;
+    width: 170px;
+    overflow-wrap: break-word; /* This property enables word wrapping */
+    /* word-wrap: break-word; */
+}
+
+ul.list-unstyled li a {
+    color: red;
+    text-decoration: none;
+    padding-left: 3px;/*Padding is maintained here*/
+    padding-right: 20px;
+    padding-bottom: 10px;/*I made some changes */
+    padding-top: 10px;
+    width: 190px;
+    
+}
+
+/* Set active link to black */
+ul.list-unstyled li.active a {
+    color: black;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">" !important;
+    font-family: "FontAwesome"; /* Assuming FontAwesome is used for the arrow symbol */
+    margin-right: 0.3rem; /* Add some spacing between the separator and the text */
+}
+
+.breadcrumb {
+    width: 100%;
+    padding-right: 60px;
+    border-radius: 0; /* Remove border radius */
+}
+
+.breadcrumb-item.active {
+    color: black; /* Set the active item color */
+}
+
+.breadcrumb-item a {
+    color: red; /* Set the link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.topbar {
+    height: 60px; 
+    width: 100%;/* Adjust the height as needed */
+    /* border-bottom: 1px solid #000; Add an underline */
+  }
+
+.hamburger-icon {
+    font-size: 40px; /* Adjust the size as needed */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    color: red;
+    padding-left: 20px;
+  }
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container {
+    display: flex;
+    /* justify-content: left; */
+    align-items: end;
+    align-self: initial;
+    height: 60px;
+    padding-left: 20;
+}
+
+ .profile-logo-container {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100px;
+  }
+
+
+
+  
+
+
+  .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(0 * var(--bs-gutter-x));
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl ,.sidebar {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .0);
+    padding-left: calc(var(--bs-gutter-x) * 0);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* .row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+} */
+.row-sidebar {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: inline-flex;
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+}
+
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 20px;
+    /* margin-right: 20px; */
+}
+.row-topbar {
+    --bs-gutter-x: 1;
+    --bs-gutter-y: 1;
+    display: flex;
+    padding-top: 25;
+    /* padding-left: 20; */
+    flex-wrap: wrap;
+    margin-top: calc(-2* var(--bs-gutter-y));
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(0 * var(--bs-gutter-x));
+}
+.edit-container{
+    align-self: center;
+    padding-left: 250; /* Add some space between the image and button */
+}
+
+hr {
+    margin: 0rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 2px solid;
+    opacity: .25;
+    margin-inline-start: 20px;
+}
+
+.Profile-container{
+    flex: 0 0 auto;  
+}
+
+.btn-back-property{
+    flex-direction: column;
+    justify-content: end;
+}
+.btn-back-container-property{
+    display: flex;
+    overflow-y: auto;
+    height: 100vh;
+    color: red;
+    background: black;
+    align-items: baseline;
+}
+
+.btn-back-primary{
+    color: red;
+background-color: black;
+align-self: end;}
+
+.col-lg-3 {
+    flex: 0 0 auto;
+    width: 200px;
+}
+.wd-kanbas.list-group {
+    border-radius: 0%;
+    border-color: black;
+    margin-right: 20px;
+   
+}
+
+.wd-kanbas.list-group > .list-group-item {
+    background-color: black;
+    border-color: black;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item > a {
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: auto;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item-active {
+    background-color: white;
+    border-color: white;
+    text-align: center;
+    padding: 10px;
+    color: red;
+    text-decoration: none;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > a {
+    color: red;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > i {
+    font-size: 2em;
+    color: red;
+}
+
+
+.wd-kanbas.list-group > .list-group-item > i {
+    font-size: 2em;
+    color: red;
+}
+
+.wd-kanbas.list-group > .list-group-item i.fa-user {
+    font-size: 2em;
+    color: white;
+}
+
+.wd-kanbas.list-group > .list-group-item-active i.fa-user {
+    font-size: 2em;
+    color: black;
+}
+
+
+
+  .wd-width-75px {
+    width: 75px;
+  }
+  
+  .wd-width-85px {
+    width: 85px;
+  }
+  
+  td {
+    padding: 0px;
+  }
+
+  ul.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5;
+    padding-top: 0;
+    margin-bottom: 15;
+    margin-top: 0;
+    margin-left: 20;
+    margin-right: 60;
+    width: 190px;
+    overflow-wrap: break-word; /* This property enables word wrapping */
+    word-wrap: break-word;
+}
+
+
+
+
+/* Set active link to black */
+ul.list-unstyled li.active a {
+    color: black;
+}
+
+
+
+a {
+    color: red;
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.nav-tabs .nav-link:not(.active) {
+    color: red !important;
+}
+
+
+.wd-kanbas.list-group {
+    border-radius: 0%;
+    border-color: black;
+    margin-right: 0px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.wd-kanbas.list-group > .list-group-item {
+    background-color: black;
+    border-color: black;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item > a {
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: auto;
+    
+}
+
+.wd-kanbas.list-group > .list-group-item-active {
+    background-color: white;
+    border-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    color: red;
+    text-decoration: none;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > a {
+    color: red;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.5em;
+}
+
+.wd-kanbas.list-group > .list-group-item-active > i {
+    font-size: 1.5em;
+    color: red;
+}
+
+
+.wd-kanbas.list-group > .list-group-item > i {
+    font-size: 1.5em;
+    color: red;
+}
+
+.wd-kanbas.list-group > .list-group-item i.fa-user {
+    font-size: 1em;
+    color: white;
+}
+
+
+
+  .wd-width-75px {
+    width: 75px;
+  }
+  
+  .wd-width-85px {
+    width: 85px;
+  }
+  
+  td {
+    padding: 0px;
+  }
+
+  ul.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 5;
+    padding-top: 0;
+    margin-bottom: 15;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 50;
+    width: 170px;
+    overflow-wrap: break-word; /* This property enables word wrapping */
+    /* word-wrap: break-word; */
+}
+
+
+
+/* Set active link to black */
+ul.list-unstyled li.active a {
+    color: black;
+}
+
+
+.topbar {
+    height: 60px; 
+    width: 100%;/* Adjust the height as needed */
+    /* border-bottom: 1px solid #000; Add an underline */
+  }
+
+.hamburger-icon {
+    font-size: 40px; /* Adjust the size as needed */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+    color: red;
+    padding-left: 20px;
+  }
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container {
+    display: flex;
+    /* justify-content: left; */
+    align-items: end;
+    align-self: initial;
+    height: 60px;
+    padding-left: 20;
+}
+
+  .profile-logo-container {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100px;
+  }
+
+  
+
+  .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(0 * var(--bs-gutter-x));
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl ,.sidebar {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .0);
+    padding-left: calc(var(--bs-gutter-x) * 0);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* .row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+} */
+.row-sidebar {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: inline-flex;
+    width: 100%;
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+}
+
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 20px;
+    /* margin-right: 20px; */
+}
+.row-topbar {
+    --bs-gutter-x: 1;
+    --bs-gutter-y: 1;
+    display: flex;
+    padding-top: 25;
+    /* padding-left: 20; */
+    flex-wrap: wrap;
+    margin-top: calc(-2* var(--bs-gutter-y));
+    margin-right: calc(0 * var(--bs-gutter-x));
+    margin-left: calc(0 * var(--bs-gutter-x));
+}
+.edit-container{
+    align-self: center;
+    padding-left: 250; /* Add some space between the image and button */
+}
+
+hr {
+    margin: 0rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 2px solid;
+    opacity: .25;
+    margin-inline-start: 20px;
+}
+.Profile-container{
+    flex: 0 0 auto;
+    align-self: center;  
+}
+.btn-back-property{
+    flex-direction: column;
+    justify-content: end;
+}
+.btn-back-container-property{
+    display: flex;
+    overflow-y: auto;
+    height: 100vh;
+    color: red;
+    background: black;
+    align-items: baseline;
+}
+
+.btn-back-primary{
+    color: red;
+background-color: black;
+align-self: end;}
+
+.col-lg-3 {
+    flex: 0 0 auto;
+    width: 200px;
+}
+.col-lg-8{
+    padding-right: 20px;
+}
+.student-view-container{
+    flex: 0 0 auto;
+    align-self: center;
+    width: 100px;
+}
+.col-lg-2 {
+    flex: 0 0 auto;
+    width: 150;
+}
+.oval-textbox {
+    width: 140px;
+    height: 35px;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .oval-textbox p {
+    margin: 0;
+  }
+  .d-flex {
+    display: flex!important;
+    padding-bottom: 10;
+}
+.center-frame{
+    display: flex!important;
+    padding-bottom: 10;
+    padding-left: 20;
+}
+
+
+.list-group-item-centerpage{
+    background-color: black;
+    border-color: black;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+.wd-kanbas.list-group-centerpage > .list-group-item > a {
+    color: white;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: auto;
+    
+}
+.col-lg-1 {
+    flex: 0 0 auto;
+    width: 5.33333333%;
+    align-self: center;
+}
+.student-view-1{
+    margin: 0px;
+    padding: 10px;
+    border-radius: 0.25rem;
+    border-width: 0px;
+    width: auto;
+    cursor: pointer;
+}
+.active-sidebar-link {
+    color: black;            /* Set the text color to black */
+    border-left: 3px solid black;  /* Add a left border with a 3px solid black line */
+    padding-left: 10px;      /* Add some padding to the left of the link text for spacing */
+    text-decoration: none;   /* Remove the default underline on the link */
+}
+
+
+label {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+li {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h5 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h6 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+button {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.row-1{
+    align-items: center ;padding-top: 20px;
+}
+.col-md-6-1{
+        text-align: right;
+        padding-right: 30;
+    }
+
+    .mytabs {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 25px;
+    }
+    .mytabs input[type="radio"] {
+        display: none;
+    }
+    .mytabs label {
+        padding: 25px;
+        background: #e2e2e2;
+        font-weight: bold;
+        color: red;
+    }
+    
+    .mytabs .tab {
+        width: 100%;
+        padding: 20px;
+        background: #fff;
+        order: 1;
+        display: none;
+    }
+    .mytabs .tab h2 {
+        font-size: 3em;
+    }
+    
+    .mytabs input[type='radio']:checked + label + .tab {
+        display: block;
+    }
+    
+    .mytabs input[type="radio"]:checked + label {
+        background: #fff;
+    }
+    .my-div {
+        border: 1px solid #000; /* Adds a 1-pixel solid black border */
+        height: 100px; /* Sets the height to 100 pixels */
+        width: 200px; /* Sets the width to 200 pixels */
+      }
+
+      .border-grey {
+        border-bottom: 1px solid grey; /* Adjust border color and size as needed */
+    }
+
+    .text-small {
+        font-size: 0.8em; /* Adjust font size as needed */
+    }
+
+    .profile-logo {
+        background-color: transparent;
+        border: 2px solid #9fa4ac; /* Grey border color */
+        border-radius: 50%; /* Create a circle using border-radius */
+        max-height: 200px; /* Adjust the max height as needed */
+        max-width: 200px; /* Adjust the max width to match max height */
+
+    }
+
+    .fa-user-size {
+        font-size: 5em;
+        line-height: .03125em;
+        vertical-align: -.1875em;
+        padding-left:13px;
+        padding-top: 1px;
+        padding-right: 13px;
+        padding-bottom: 13px;
+        
+    }
