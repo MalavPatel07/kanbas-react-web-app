@@ -267,9 +267,9 @@ hr {
     margin-inline-start: 20px;
 }
 
-.Profile-container{
+/* .Profile-container{
     flex: 0 0 auto;  
-}
+} */
 
 .btn-back-property{
     flex-direction: column;
@@ -618,6 +618,7 @@ hr {
 .Profile-container{
     flex: 0 0 auto;
     align-self: center;  
+    width: 100%;
 }
 .btn-back-property{
     flex-direction: column;

@@ -1,12 +1,8 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../Database";
-import { BsFillCheckCircleFill } from "react-icons/bs";
-import { FaEllipsisV } from 'react-icons/fa';
 import "../CourseNavigation/index.css";
-
-
-
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
 function AssignmentEditor() {
@@ -21,19 +17,6 @@ function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
   return (
-    // <div>
-    //   <h2>Assignment Name</h2>
-    //   <input value={assignment.title}
-    //          className="form-control mb-2" />
-    //   <Link to={`/Kanbas/Courses/${courseId}/Assignments`}
-    //         className="btn btn-danger">
-    //     Cancel
-    //   </Link>
-     
-    //   <button onClick={handleSave} className="btn btn-success me-2">
-    //     Save
-    //   </button>
-    // </div>
 
     <div class="col-lg-10"> 
                             <div class="center-frame">
@@ -43,17 +26,11 @@ function AssignmentEditor() {
 
                                 <button type="button" class="student-view-1 float-end " style={{ padding: '14px', marginLeft: '20px' }}> 
                                 <div>
-                                    <FaEllipsisV aria-hidden="true" size={20}/>
+                                <i class="fa fa-ellipsis-v " aria-hidden="true"></i>
                                 </div>
                                 </button>
                                 <div className="float-end">
-                                        <BsFillCheckCircleFill 
-                                            className="m-2 text-success" 
-                                            style={{padding: '5px'}} 
-                                            aria-hidden="true"
-                                            size={24} // You can adjust the size as per your requirement
-                                        /> 
-                                        Published
+                                <i class="fa fa-check-circle m-2 float-end text-success" style={{padding: '5px'}} aria-hidden="true"> Published</i>
                                 </div>
                                 
                             </div>

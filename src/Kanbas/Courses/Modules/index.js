@@ -1,6 +1,6 @@
 import ModuleList from "./ModuleList";
 import "../CourseNavigation/index.css"
-
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
 function Modules() {
