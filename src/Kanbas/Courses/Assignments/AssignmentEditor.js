@@ -263,9 +263,9 @@ function AssignmentEditor() {
     
     <div class="container-fluid" style={{alignSelf: 'center'}}>
     
-    <button type="button" class="btn btn-danger float-end" style={{marginLeft: '20px'}}>Save</button>
+    <button onClick={handleSave}  type="button" class="btn btn-danger float-end" style={{marginLeft: '20px'}}>Save</button>
     
-    <button type="button" class="btn btn-secondary float-end">Cancel</button>
+    <button onClick={handleSave} type="button" class="btn btn-secondary float-end">Cancel</button>
     
     </div>
 </div>

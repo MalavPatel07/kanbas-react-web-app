@@ -3,10 +3,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 
 function Home() {
   return (
-
+    <div className="row">
     <div className="col-lg-8">
-                          <div className="p-2">
-                            <div className="row row-cols-lg-auto g-3 float-end">
+                          <div className="row">
+                            <div className="row row-cols-lg-auto g-3 float-end" style={{justifyContent : 'flex-end'}}>
                             <div className="col">
                               <button className="btn btn-secondary">Collapse All</button>
                             </div>
@@ -31,10 +31,11 @@ function Home() {
                             </div>
                           </div>
                         </div>
-<div className="container" style={{height: '60%', overflowY: 'scroll'}}>
+<div className="container" >
           <div className="d-block">
 
       
+          
             <div className="mt-4">
               <ul className="list-group rounded-0">
                 <li className="list-group-item list-group-item-secondary">
@@ -123,22 +124,45 @@ function Home() {
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i> Intro to
                   JavaScript
-                </li>
-              </ul>
-            </div>
+                  </li>
+                          </ul>
+                        </div>
 
-          </div>
-</div>           
-      </div>
-    // <div className="row">
-    //     <div className="col-10">
-    //         <h2>Home</h2>
-    //         <ModuleList />
-    //     </div>
-    //     <div className="col-2">
-    //         <h2>Status</h2>
-    //     </div>
-    // </div>
-  );
+                      </div>
+        </div>           
+                  </div>
+    <div className="col-lg-3 	d-none d-xxl-block">
+                <h5>Course Status</h5>
+                <button type="button" class="btn btn-secondary">Unpublish</button>
+                <button type="button" class="btn btn-success">Publish</button>
+                <div class="mt-2">
+                    <ul class="list-group rounded-0">
+                        <li class="list-group-item list-group-item-secondary"><a href="#">Import Existing Content</a></li>
+                        <li class="list-group-item list-group-item-secondary"><a href="#">Import from Commons</a></li>
+                        <li class="list-group-item list-group-item-secondary"><a href="#">Choose Home Page</a></li>
+                        <li class="list-group-item list-group-item-secondary"><a href="#">New Announcement</a></li>
+                        <li class="list-group-item list-group-item-secondary"><a href="#">New Analytics</a></li>
+                        <li class="list-group-item list-group-item-secondary"><a href="#">View Course Notifications</a></li>
+        
+                    </ul>
+
+                </div>
+                
+                    
+                    <h2>Coming Up</h2>
+                    <a href="#">View Calendar</a>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Lecture 1</a></li>
+                        <li><a href="#">Lecture 2</a></li>
+                        <li><a href="#">Lecture 3</a></li>
+                        <li><a href="#">Lecture 4</a></li>
+                    </ul>   
+
+            </div>
+                  </div>     
+             
+
+
+);
 }
 export default Home;
