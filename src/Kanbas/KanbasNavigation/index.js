@@ -15,7 +15,7 @@ function KanbasNavigation() {
   const links = ["Account", "Dashboard", "Courses", "Calendar","Inbox","History","Studio","Commons","Help"];
 
   const linkToIconMap = {
-    Account: <BiUserCircle className="wd-icon" style={{color: 'red'}} />,
+    Account: <BiUserCircle className="wd-icon" style={{color: 'white'}} />,
     Dashboard: <RiDashboard3Fill className="wd-icon" style={{color: 'red'}} />,
     Courses: <FaBook className="wd-icon" style={{color: 'red'}} />,
     Calendar: <BsFillCalendar2WeekFill className="wd-icon" style={{color: 'red'}} />,

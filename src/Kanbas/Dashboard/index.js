@@ -8,9 +8,10 @@ function Dashboard() {
   const courses = db.courses;
   return (
     <div>
-      <h1>Dashboard</h1>
-      <hr />
-      <h2>Published Courses ({courses.length})</h2>
+      <h1 style={{marginTop:'0px',marginLeft:'20px'}}>DASHBOARD</h1>
+      <hr style={{marginTop:'0px',marginLeft:'20px'}}/>
+      <h5 style={{marginTop:'0px',marginLeft:'20px'}}>Published Courses ({courses.length})</h5>
+      <hr style={{marginTop:'0px',marginLeft:'20px'}}/>
       <div className="row row-cols-1 row-cols-md-3 g-4" style={{marginLeft: '16px'}}>
         {courses.map((course, index) => (
           <div className="col" key={course._id}>

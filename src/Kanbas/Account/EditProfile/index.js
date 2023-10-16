@@ -10,13 +10,13 @@ function  EditProfile() {
       };
 
   return (
-    <div class="col-lg-9">                         
+    <div class="col-lg-9 mt-4">                         
                             <div class="profile-logo-container">
                               <div class="profile-logo">
                                 <i class="fa-solid fa-user fa-user-size" style={{color: '#727883'}}></i>
                               </div>
                               <div class="edit-container">
-                                <button onClick={handleCS} class="btn btn-secondary rounded-1"><i class="fa-solid fa-pencil"></i> Cancel Editing</button>
+                                <button onClick={handleCS} class="btn btn-secondary rounded-1 flot-end"><i class="fa-solid fa-pencil"></i> Cancel Editing</button>
                             </div>
                             </div>
                             <div class="container">              

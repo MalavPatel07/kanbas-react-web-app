@@ -4,19 +4,39 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
 function CourseNavigation() {
-  const links = ["Home", "Modules", "Piazza","Zoom Meetings","Assignments","Quizzes","Grades","People","Panopto Video","Discussions","Announcements","Pages","Files",
-  "Rubrics","Outcomes","Syllabus","Course Settings"];
+  const links = {
+    "Home": "Home",
+    "Modules": "Modules",
+    "Piazza": "Piazza",
+    "Zoom Meetings": "Zoom-Meetings",
+    "Assignments": "Assignments",
+    "Quizzes": "Quizzes",
+    "Grades": "Grades",
+    "People": "People",
+    "Panopto Video": "Panopto-Video",
+    "Discussions": "Discussions",
+    "Announcements": "Announcements",
+    "Pages": "Pages",
+    "Files": "Files",
+    "Rubrics": "Rubrics",
+    "Outcomes": "Outcomes",
+    "Syllabus": "Syllabus",
+    "Course Settings": "Settings", 
+  };
+
   const { courseId } = useParams();
   const { pathname } = useLocation();
+
   return (
-    <div className="wd-course-navigation list-group" style={{ width: 150}}>
-      {links.map((link, index) => (
+    <div className="wd-course-navigation list-group" style={{ width: 150 }}>
+      {Object.keys(links).map((linkText, index) => (
         <Link
           key={index}
-          to={`/Kanbasas/Courses/${courseId}/${link}`}
-          className={`list-unstyled ${pathname.includes(link) && "active"}` }style={{padding : 0}}
+          to={`/Kanbas/Courses/${courseId}/${links[linkText]}`}
+          className={`list-unstyled ${pathname.includes(links[linkText]) && "active"}`}
+          style={{ padding: 0 }}
         >
-          <li>{link}</li>
+          <li>{linkText}</li>
         </Link>
       ))}
     </div>
@@ -24,6 +44,7 @@ function CourseNavigation() {
 }
 
 export default CourseNavigation;
+
 
 
 

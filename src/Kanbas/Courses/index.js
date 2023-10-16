@@ -8,6 +8,7 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import Settings from "./Settings";
 import "./CourseNavigation/index.css"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
@@ -37,10 +38,12 @@ function Courses() {
                               </nav>
                            </div>
     
-
+                         
       </div>
+   
       </div> 
-      <hr/>
+      <hr style={{marginTop:'0px',marginLeft:'20px'}}/>
+    
       
       <CourseNavigation />
       <div>
@@ -61,6 +64,7 @@ function Courses() {
               element={<AssignmentEditor/>}
             />
             <Route path="Grades" element={<Grades/>} />
+            <Route path="Settings/*" element={<Settings/>} />
           </Routes>
         </div>
       </div>

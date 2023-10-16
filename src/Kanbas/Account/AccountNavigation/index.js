@@ -11,7 +11,7 @@ function AccountNavigation() {
         <Link
           key={index}
           to={`/Kanbas/Account/${link}`}
-          className={`list-unstyled ${pathname.includes(link) && "active"}`}
+          className={`list-unstyled ${pathname.includes(link) && "active"}`}style={{padding : 0}}
         >
           {link}
         </Link>

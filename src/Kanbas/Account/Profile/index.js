@@ -11,8 +11,7 @@ function  Profile() {
 
 
   return (
-
-        <div class="col-lg-9">
+        <div class="col-lg-9 mt-4">
                            
                             <div class="profile-logo-container">
                               <div class="profile-logo">
