@@ -4,12 +4,13 @@ import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
 import EditProfile from "./Account/EditProfile";
+import Nav from "../nav";
 
 
 function Kanbas() {
   return (
     <div className="d-flex">
-      
+       {/* <Nav/> */}
       <KanbasNavigation />
       <div>
         <Routes>
