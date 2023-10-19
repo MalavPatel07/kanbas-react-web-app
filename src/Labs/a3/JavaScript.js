@@ -52,7 +52,6 @@ function JavaScript() {
             <Spread/>
             <Destructing/>
             <FunctionDestructing/>
-            <Add/>
            
        </div>
     );
