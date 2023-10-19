@@ -16,19 +16,16 @@ function Dashboard() {
         {courses.map((course, index) => (
           <div className="col" key={course._id}>
             <div className="card mb-3" style={{width:'250px'}}>
-              <img src="/images/react.png" className="card-img-top" alt="..." />
+              <img src="../../labs/a1/boston.jfif" className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{course.name}</h5>
                 <Link
                   to={`/Kanbas/Courses/${course._id}`}
-                  className="btn btn-primary"
+                  style={{color:'red',textDecoration: 'none'}}
                 >
-                  {course.name}
+                  {course.name} <br/>
+                  Start Date: {course.startDate}<br/>
+                  <i class="fas fa-arrow-right-from-bracket"></i>
                 </Link>
-                <p className="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. 
-                </p>
               </div>
             </div>
           </div>

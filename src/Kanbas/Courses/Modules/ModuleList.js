@@ -15,7 +15,13 @@ function ModuleList() {
          .map((module, index) => (
            <li key={index} className="list-group-item">
             <i className="fa fa-bars me-2" aria-hidden="true"></i>
-             {module.name}
+             
+             <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i>
+                              {module.name}: <br/>
              {module.description}
              {
                 module.lessons && (
@@ -23,7 +29,7 @@ function ModuleList() {
                         {
                             module.lessons.map((lesson, index) => (
                                 <li key={index} className="list-group-item">
-                                  <i className="fa fa-bars me-2" aria-hidden="true"></i>
+                                  <i className="fa fa-bars me-2" aria-hidden="true"></i>   
                                     {lesson.name}
                                     {lesson.description}
                                 </li>

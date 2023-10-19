@@ -35,7 +35,21 @@ function Modules() {
                       </div>
                     </div>
                   </div>
-      <ModuleList />
+                  <ul className="list-group rounded-0">
+                  <li className="list-group-item list-group-item-secondary">
+                  <i className="fa fa-bars me-2" aria-hidden="true"></i>
+                  Week 0
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
+                              <i class="fa-solid fa-caret-up fa-rotate-180  m-2 float-end"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i>
+                </li>
+                <ModuleList />
+                  </ul>
+    
     </div>
   );
 }

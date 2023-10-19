@@ -2,13 +2,7 @@ import { Link,Route,Routes } from "react-router-dom";
 import CourseSettings from "./CourseSettings";
 import CourseNavigation from "./CourseNavigation";
 
-
-
-
-
 function Settings() {
-
-
  return (
     <div>    
    <nav className="nav nav-tabs mt-2">
@@ -17,6 +11,7 @@ function Settings() {
    </nav>
     
     <Routes>
+        <Route path="/" element={<CourseSettings />} />
         <Route path="CourseSettings" element={<CourseSettings/>} />
         <Route path="CourseNavigation" element={<CourseNavigation/>} />
     </Routes>

@@ -19,9 +19,9 @@ function Home() {
                                   Publish All
                                 </button>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a className="dropdown-item" href="#">Publish Week 1</a>
-                                  <a className="dropdown-item" href="#">Publish Week 2</a>
-                                  <a className="dropdown-item" href="#">Publish Week 3</a>
+                                  <a className="dropdown-item">Publish Week 1</a>
+                                  <a className="dropdown-item">Publish Week 2</a>
+                                  <a className="dropdown-item">Publish Week 3</a>
                                 </div>
                               </div>
                                 
@@ -40,7 +40,15 @@ function Home() {
               <ul className="list-group rounded-0">
                 <li className="list-group-item list-group-item-secondary">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
-                  Week 0 - HTML
+                  <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                   Week 0
+                   <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
+                              <i class="fa-solid fa-caret-up fa-rotate-180  m-2 float-end"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
@@ -49,30 +57,65 @@ function Home() {
                 <ModuleList />
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i
-                  ><span className="ms-4"> Intro to JavaScript</span>
+                  ><span> Intro to JavaScript</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> READING
+                  <i className="fa fa-bars me-2" aria-hidden="true"></i>READING
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> SLIDES
+                  <i className="fa fa-bars me-2" aria-hidden="true"></i>SLIDES
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
-                    ><span className="ms-4">Intro to course</span></a
+                    ><span>Intro to course</span></a
                   >
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   <span>Intro to HTML</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i> Intro to
                   JavaScript
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
               </ul>
             </div>
@@ -81,50 +124,85 @@ function Home() {
                 <li className="list-group-item list-group-item-secondary">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   Week 1 - HTML
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i class="fa fa-plus m-2 float-end" aria-hidden="true"></i>
+                              <i class="fa-solid fa-caret-up fa-rotate-180  m-2 float-end"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   LEARNING OBJECTIVES
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   <span className="ms-4">Intro to course</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   <span className="ms-4">Intro to HTML</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i
                   ><span className="ms-4"> Intro to CSS</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i
                   ><span className="ms-4"> Intro to JavaScript</span>
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> READING
+                  <i className="fa fa-bars me-2" aria-hidden="true"></i>READING
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> SLIDES
+                  <i className="fa fa-bars me-2" aria-hidden="true"></i>SLIDES
+                  <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
                 <li className="list-group-item">
                   <i className="fa fa-bars me-2" aria-hidden="true"></i>
                   <a href="https://youtu.be/74_BnRx7Z9Y?si=vanjCQYXdwYJZO1t"
-                    ><span className="ms-4">Intro to course</span></a
-                  >
+                    ><span>Intro to course</span></a>
+                    <i class="fa fa-ellipsis-v float-end m-2" aria-hidden="true"></i>
+                              <i
+                                class="fa fa-check-circle m-2 float-end text-success"
+                                aria-hidden="true"
+                              ></i> 
                 </li>
-                <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i>
-                  <span>Intro to HTML</span>
-                </li>
-                <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> Intro to CSS
-                </li>
-                <li className="list-group-item">
-                  <i className="fa fa-bars me-2" aria-hidden="true"></i> Intro to
-                  JavaScript
-                  </li>
                           </ul>
                         </div>
 
