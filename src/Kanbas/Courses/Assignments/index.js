@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import db from "../../Database";
 import AssignmentItem from "./AssignmentItem";
 import "../CourseNavigation/index.css"
@@ -10,6 +10,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
         const assignments = db.assignments;
         const courseAssignments = assignments.filter(
           (assignment) => assignment.course === courseId);
+          const navigate = useNavigate();
+          const handleEdit = () => {
+            navigate(`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor`);
+          };
 
   return (
 
@@ -21,13 +25,15 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
                                 <div class="container-fluid" style={{alignSelf: 'center'}}>
                                     
                                 <button type="button" class="student-view-1 float-end " style={{padding: '14px', marginLeft: '20px'}}> <i class="fa fa-ellipsis-v " aria-hidden="true"></i></button>
-                                <button type="button" class="student-view-1 float-end  " style={{backgroundColor: 'red', color: 'white', marginLeft: '20px'}}><i class="fa fa-plus mr-1" aria-hidden="true"></i> Assignment</button>
+                                <button onClick={handleEdit} type="button" class="student-view-1 float-end  " style={{backgroundColor: 'red', color: 'white', marginLeft: '20px'}}><i class="fa fa-plus mr-1" aria-hidden="true"></i> 
+                                Assignment
+                                </button>
                                 <button type="button" class="student-view-1 float-end "><i class="fa fa-plus mr-1" aria-hidden="true"></i> Group </button>
                                 
                                 </div>
                             </div>
                
-                           
+                            
         
         <hr />
 
@@ -56,6 +62,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 {courseAssignments.map((assignment) => (
           <AssignmentItem key={assignment._id} assignment={assignment} />
         ))}
+
+        {/* <AssignmentItem/> */}
 
 
   </ul>

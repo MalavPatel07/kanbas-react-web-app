@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import db from "../../Database";
 import "../CourseNavigation/index.css";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
+
 function AssignmentEditor() {
+  // const { assignmentId } = useParams();
+  // const [assignments, setAssignments] = useParams(db.assignments);
+  // const [assignment, setAssignment] = useState({
+  //   title: "New Module",
+  //   course: courseId,
+  // });
+
+  // const updateModule = () => {
+  //   setAssignments(
+  //     assignments.map((m) => {
+  //       if (m._id === assignment._id) {
+  //         return assignment;
+  //       } else {
+  //         return m;
+  //       }
+  //     })
+  //   );
+  // }
+
   const { assignmentId } = useParams();
   const assignment = db.assignments.find(
     (assignment) => assignment._id === assignmentId);
@@ -16,6 +37,16 @@ function AssignmentEditor() {
     console.log("Actually saving assignment TBD in later assignments");
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
+
+ 
+  // const { courseId } = useParams();
+  // const navigate = useNavigate();
+  // const handleSave = () => {
+  //   console.log("Actually saving assignment TBD in later assignments");
+  //   navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  // };
+
+
   return (
 
     <div class="col-lg-10"> 

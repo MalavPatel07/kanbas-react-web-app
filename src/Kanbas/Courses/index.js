@@ -13,11 +13,11 @@ import "./CourseNavigation/index.css"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
-function Courses() {
+function Courses({ courses }) {
   const { courseId } = useParams();
   const {pathname} = useLocation();
-  const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = db.courses.find((course) => course._id === courseId);
+  //const [empty, kanbas, courses, id, screen] = pathname.split("/");
+  const course = courses.find((course) => course._id === courseId);
   return (
     <div  style={{width : 1300}}>
       {/* <h1>Courses {course.name} / {screen}</h1> */}
@@ -33,7 +33,7 @@ function Courses() {
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Courses</a></li>
                                   <li class="breadcrumb-item"><a href="#">{course.name}</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">{screen}</li>
+                                  {/* <li class="breadcrumb-item active" aria-current="page">{screen}</li> */}
                                 </ol>
                               </nav>
                            </div>
