@@ -59,11 +59,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
   
 
-{courseAssignments.map((assignment) => (
+{/* {courseAssignments.map((assignment) => (
           <AssignmentItem key={assignment._id} assignment={assignment} />
-        ))}
+        ))} */}
 
-        {/* <AssignmentItem/> */}
+        <AssignmentItem/>
 
 
   </ul>

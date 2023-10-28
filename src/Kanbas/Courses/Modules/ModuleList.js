@@ -23,16 +23,22 @@ function ModuleList() {
   return (
     <ul className="list-group rounded-0" style={{marginLeft:'0px'}}>
       <li className="list-group-item">
-        <button onClick={() => dispatch(addModule({...module,course:courseId}))}>Add</button>
-        <button onClick={() => dispatch(updateModule(module))}>Update</button>
-        <input value={module.name}
+      <input className="form-control w-25"
+      value={module.name}
           onChange={(e) => dispatch(setModule({
             ...module, name: e.target.value }))}
-        />
-        <textarea value={module.description}
+        /> <br/>
+        <button className="btn btn-success btn-sm float-end text-suc"
+        onClick={() => dispatch(addModule({...module,course:courseId}))}>Add</button>
+        <button className="btn btn-primary btn-sm float-end text-suc"
+        onClick={() => dispatch(updateModule(module))}>Update</button>
+        <textarea className="form-control w-25"
+        value={module.description}
           onChange={(e) => dispatch(setModule({
             ...module, description: e.target.value }))}
         />
+        
+       
       </li>
 
       {
@@ -47,12 +53,12 @@ function ModuleList() {
                                 class="fa fa-check-circle m-2 float-end text-success"
                                 aria-hidden="true"
                               ></i>
-                              <button
+                              <button className='btn btn-success btn-sm float-end' 
                                   onClick={() => dispatch(setModule(module))}>
                                   Edit
                               </button>
 
-                                 <button
+                                 <button className='btn btn-danger btn-sm float-end'
                                   onClick={() => dispatch(deleteModule(module._id))}>
                                   Delete
                                 </button>

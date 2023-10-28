@@ -4,47 +4,63 @@ import { useSelector, useDispatch } from "react-redux";
 import db from "../../Database";
 import "../CourseNavigation/index.css";
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import assignmentReducer from "./assignmentReducer";
+import { addAssignment, deleteAssignment, updateAssignment, setAssignment } from "./assignmentReducer";
 
 
 
 function AssignmentEditor() {
-  // const { assignmentId } = useParams();
-  // const [assignments, setAssignments] = useParams(db.assignments);
-  // const [assignment, setAssignment] = useState({
-  //   title: "New Module",
-  //   course: courseId,
-  // });
-
-  // const updateModule = () => {
-  //   setAssignments(
-  //     assignments.map((m) => {
-  //       if (m._id === assignment._id) {
-  //         return assignment;
-  //       } else {
-  //         return m;
-  //       }
-  //     })
-  //   );
-  // }
 
   const { assignmentId } = useParams();
-  const assignment = db.assignments.find(
-    (assignment) => assignment._id === assignmentId);
+  // console.log(assignmentId)
+  
+
+  const assignment = useSelector((state) => state.assignmentReducer.assignment);
+  const assignments = useSelector((state) => state.assignmentReducer.assignments);
+  let assignmentTitle;
+  let due;
+  let description;
+  let availableFromDate;
+  let availableUntilDate;
+  let points;
+  if (assignmentId !== "AssignmentEditor") {
+  //   assignmentTitle = "New Assignment";
+  //   due = "2000-01-01";
+  //   description = "New Description";
+  //   availableFromDate = "2000-01-01";
+  //   availableUntilDate = "2000-01-01";
+  //   points = 0;
+  // }
+  // else {
+    assignmentTitle = assignment.title;
+    due = assignment.due;
+    availableFromDate = assignment.availableFromDate;
+    availableUntilDate = assignment.availableUntilDate;
+    description = assignment.description;
+    points = assignment.point;
+  }
+
+  
+
+
 
   const { courseId } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSave = () => {
-    console.log("Actually saving assignment TBD in later assignments");
+    if (assignmentId === "AssignmentEditor") {
+   
+      dispatch(addAssignment({...assignment,course:courseId}));
+    } else {
+    
+      // console.log(assignment.title)
+      dispatch(updateAssignment(assignment));
+      
+    }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
  
-  // const { courseId } = useParams();
-  // const navigate = useNavigate();
-  // const handleSave = () => {
-  //   console.log("Actually saving assignment TBD in later assignments");
-  //   navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  // };
 
 
   return (
@@ -80,11 +96,31 @@ function AssignmentEditor() {
     <div style={{padding: '5px'}}><label> Assignment Name </label></div>
    
     <div class="container" style={{padding: '5px'}} >
-        <input value={assignment.title}
+        <input 
+        value={assignmentTitle}
+        onChange={(e) => {
+          dispatch(
+            setAssignment({
+              ...assignment,
+              title: e.target.value,
+            })
+          );
+        }}
         class="form-control float-end"
-               placeholder="Assignment Name" /></div>
+               placeholder="Assignment Name" 
+               /></div>
     <div class="container" style={{padding: '5px'}}>
-    <textarea class="form-control float-end h-20">This is the first assignment to build Kanbas</textarea></div>
+    <textarea class="form-control float-end h-20"
+    onChange={(e) => {
+      dispatch(
+        setAssignment({
+          ...assignment,
+          description: e.target.value,
+        })
+      );
+    }}
+    
+    >{assignment.description}</textarea></div>
     <div class="container-fluid" style={{width: '800px', alignItems: 'center'}}>
         <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
           
@@ -92,141 +128,26 @@ function AssignmentEditor() {
             <label>Points</label>
                                   </div>
           <div class="col-md-6">
-            <input class="form-control" value="100" type="number" max="100" min="50" step="5" />
+            <input class="form-control" value={assignment.points} type="number" max="100" min="50" step="5"
+            onChange={(e) => {
+              dispatch(
+                setAssignment({
+                  ...assignment,
+                  points: e.target.value,
+                })
+              );
+            }} 
+            
+            />
           </div>
         </div>
-
-
-
-        <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Assignment Group</label>
-                                    </div>
-            <div class="col-md-6">
-                <select class="form-control ">
-                    <option value="option1">Assignemnts</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-            </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-               <label>Display Grade as</label>
-                                    </div>
-            <div class="col-md-6">
-                <select class="form-control ">
-                    <option value="option1">Points</option>
-                    <option value="option2">Percentage</option>
-                    <option value="option3">Complete/Incomplete</option>
-                    </select>
-            </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Submission Type</label>
-                                    </div>
-            <div class="col-md-6">
-                <select class="form-control ">
-                    <option value="option1">Online</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    </select>                            </div>
-          </div>
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Online Entry Options</label>
-                                    </div>
-            <div class="col-md-6">
-                <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Text Entry</label>
-        <br />
-        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Website URL
-        </label>
-        <br />
-        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Media Recordings</label>
-            
-        
-        <br />
-        <input   class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label"> Student Annotation</label>
-            
-        
-        <br />
-        <input class="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">File Uploads </label>                            </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Submission Attempts</label>
-                                    </div>
-            <div class="col-md-6">
-                <select class="form-control ">
-                    <option value="option1">Unlimited</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    </select>                           </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Plaigarism Review</label>
-                                    </div>
-            <div class="col-md-6">
-                <select class="form-control ">
-                    <option value="option1">None</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    </select>                            </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Group Assignment</label>
-                                    </div>
-            <div class="col-md-6">
-                <input class ="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">This is a group assignment </label>
-            </div>
-          </div>
-
-
-
-          <div class="row" style={{alignItems: 'center' ,paddingTop: '10px'}} >
-            <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
-              <label>Peer Reviews</label>
-                                    </div>
-            <div class="col-md-6">
-                <input class ="form-check-input" type="checkbox" id="textEntry" /> <label class="form-check-label">Require Peer Reviews </label>
-            </div>
-          </div>
-
-
 
 <div class="row" style={{alignItems: 'center' ,paddingBottom: '10px',paddingTop: '10px'}} >
 <div class="col-md-6" style={{textAlign: 'end',paddingRight: '20px'}}>
 <label>Assign</label>
             </div>
 <div class="col-md-6">
-<label>Assign To</label><br />
-<select class="form-control ">
-<option value="option1">Everyone</option>
-<option value="option2">Option 2</option>
-<option value="option3">Option 3</option>
-</select> 
+
 <div class="row" >
 <div class="col-sm">
     <label>Due</label>
@@ -236,7 +157,17 @@ function AssignmentEditor() {
 <div class="col-sm" style={{paddingRight: 20}}>
     <input type="date"
            id="text-fields-due"
-            value="2021-01-01" />
+            value={due} 
+            onChange={(e) => {
+              dispatch(
+                setAssignment({
+                  ...assignment,
+                  due: e.target.value,
+                })
+              );
+            }}
+            
+            />
             
     </div>
 </div>
@@ -248,7 +179,18 @@ function AssignmentEditor() {
  
     <input type="date"
       id="text-fields-due"
-       value="2021-01-01" />
+       value={availableFromDate}
+       onChange={(e) => {
+        dispatch(
+          setAssignment({
+            ...assignment,
+            availableFromDate: e.target.value,
+          })
+        );
+      }}
+        
+       
+       />
        <br />
     </div></div>
     
@@ -262,7 +204,17 @@ function AssignmentEditor() {
    
     <input type="date"
       id="text-fields-due"
-       value="2021-01-01" />
+       value={availableUntilDate}
+       onChange={(e) => {
+        dispatch(
+          setAssignment({
+            ...assignment,
+            availableUntilDate: e.target.value,
+          })
+        );
+      }} 
+       
+       />
        <br />
 </div>
 
@@ -312,19 +264,6 @@ function AssignmentEditor() {
         
         </div>
         </div>
-        
-                  
-                 
-                
-  
-
-
-
-
-
-
-    
-    
   );
 }
 
