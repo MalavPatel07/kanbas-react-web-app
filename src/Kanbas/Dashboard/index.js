@@ -21,29 +21,31 @@ function Dashboard({
       <h5>Course</h5>
       <input
         value={course.name}
-        className="form-control"
+        className="form-control w-25"
         onChange={(e) => setCourse({ ...course, name: e.target.value })}
       />
       <input
         value={course.number}
-        className="form-control"
+        className="form-control w-25"
         onChange={(e) => setCourse({ ...course, number: e.target.value })}
       />
       <input
         value={course.startDate}
-        className="form-control"
+        className="form-control w-25"
         type="date"
         onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
       />
       <input
         value={course.endDate}
-        className="form-control"
+        className="form-control w-25"
         type="date"
         onChange={(e) => setCourse({ ...course, endDate: e.target.value })}
       />
-      <button onClick={updateCourse}>Update</button>
+      <button className="btn btn-primary btn-sm" 
+      onClick={updateCourse}>Update</button>
 
-      <button onClick={addNewCourse}>Add</button>
+      <button className="btn btn-success btn-sm" 
+      onClick={addNewCourse}>Add</button>
       <hr />
       <h5 style={{marginTop:'0px',marginLeft:'20px'}}>Published Courses ({courses.length})</h5>
       <hr style={{marginTop:'0px',marginLeft:'20px'}}/>
@@ -53,7 +55,7 @@ function Dashboard({
             <div className="card mb-3" style={{width:'250px'}}>
               <img src="../../labs/a1/boston.jfif" className="card-img-top" alt="..." />
               <div className="card-body">
-              <button
+              <button className="btn btn-warning btn-sm float-end"
                   onClick={(event) => {
                     event.preventDefault();
                     setCourse(course);
@@ -61,7 +63,7 @@ function Dashboard({
                 >
                   Edit
                 </button>
-                <button
+                <button className="btn btn-danger btn-sm float-end"
                   onClick={(event) => {
                     event.preventDefault();
                     deleteCourse(course._id);
