@@ -18,8 +18,6 @@ function ModuleList() {
   
   const dispatch = useDispatch();
 
-
-
   return (
     <ul className="list-group rounded-0" style={{marginLeft:'0px'}}>
       <li className="list-group-item">
