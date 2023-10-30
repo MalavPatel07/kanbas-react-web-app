@@ -9,13 +9,30 @@ import BooleanStateVariables from "./BooleanStateVariables";
 import StringStateVariables from "./StringStatevariables";
 import DateStateVariable from "./DateStateVariables";
 import ObjectStateVariables from "./ObjectStateVariables";
+import ArrayStateVariable from "./ArrayStateVariable";
+import ParentStateComponent from "./ParentStateComponent";
+import ReduxExamples from "./ReduxExamples";
+import { Provider } from "react-redux";
+import store from "../store";
+import HelloRedux from "./ReduxExamples/HelloRedux";
+import CounterRedux from "./ReduxExamples/CounterRedux";
+import AddRedux from "./ReduxExamples/AddRedux";
+import ToDos from "./ReduxExamples/todos";
+import { useSelector } from "react-redux";
 
-const Assignment4 = () => {
+   
+
+function Assignment4 () {
     function sayHello() {
     alert("Hello World!");
-    };        
+    };
+
+    
+
+     
+       
  return(
-    <>
+    <Provider store={store}>     
      <h1>Assignment 4</h1>
      <Add a={1} b={2} />
      <ClickEvent />
@@ -27,7 +44,15 @@ const Assignment4 = () => {
      <StringStateVariables />
      <DateStateVariable />
      <ObjectStateVariables />
-   </>
+     <ArrayStateVariable />
+     <ParentStateComponent />
+     <ReduxExamples />
+     <HelloRedux />
+     <CounterRedux />
+     <AddRedux />
+     <ToDos/>
+
+   </Provider>
  );
 };
 export default Assignment4;

@@ -16,17 +16,17 @@ function AssignmentItem() {
   const assignment = useSelector((state) => state.assignmentReducer.assignment);
 
 
-  const handleDeleteClick = () => {
-    // let shouldDelete = window.confirm("Are you sure you want to remove the assignment?");
-    // console.log(shouldDelete)
+  // const handleDeleteClick = () => {
+  //   // let shouldDelete = window.confirm("Are you sure you want to remove the assignment?");
+  //   // console.log(shouldDelete)
   
-    if (window.confirm("Are you sure you want to remove the assignment?")) {
-      //console.log(window.confirm("Are you sure you want to remove the assignment?"))
-      dispatch(deleteAssignment(assignment._id));
-      //navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+  //   if (window.confirm("Are you sure you want to remove the assignment?")) {
+  //     //console.log(window.confirm("Are you sure you want to remove the assignment?"))
+  //     dispatch(deleteAssignment(assignment._id));
+  //     //navigate(`/Kanbas/Courses/${courseId}/Assignments`);
       
-    }
-  };
+  //   }
+  // };
  
   return (
 
