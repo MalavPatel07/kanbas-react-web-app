@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "../CourseNavigation/index.css"
 import { useSelector, useDispatch } from "react-redux";
@@ -11,19 +11,22 @@ function AssignmentItem() {
   const { courseId } = useParams();
   const { assignmentId } = useParams(); 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const assignments = useSelector((state) => state.assignmentReducer.assignments);
   const assignment = useSelector((state) => state.assignmentReducer.assignment);
 
 
-  // const handleDeleteClick = () => {
-  //   let shouldDelete = window.confirm("Are you sure you want to remove the assignment?");
-  //   console.log(shouldDelete)
+  const handleDeleteClick = () => {
+    // let shouldDelete = window.confirm("Are you sure you want to remove the assignment?");
+    // console.log(shouldDelete)
   
-  //   if (shouldDelete) {
-  //     dispatch(deleteAssignment(assignment._id));
+    if (window.confirm("Are you sure you want to remove the assignment?")) {
+      //console.log(window.confirm("Are you sure you want to remove the assignment?"))
+      dispatch(deleteAssignment(assignment._id));
+      //navigate(`/Kanbas/Courses/${courseId}/Assignments`);
       
-  //   }
-  // };
+    }
+  };
  
   return (
 
@@ -48,9 +51,13 @@ function AssignmentItem() {
                 {assignment.title}
               </Link>
               <button className='btn btn-outline-danger btn-sm float-end'
-                              //  onClick={handleDeleteClick}>
-                              onClick={() => dispatch(deleteAssignment(assignment._id))}> 
-                                {/* onClick={() => dispatch(deleteAssignment(assignment._id))}> */}
+                              
+                              onClick={() => 
+                                {if (window.confirm("Are you sure you want to remove the assignment?")) {
+                                  dispatch(deleteAssignment(assignment._id))}
+
+                                }
+                              }> 
                                Delete
                              </button>
 
