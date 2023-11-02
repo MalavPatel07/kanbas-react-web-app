@@ -60,6 +60,13 @@ function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };
 
+
+  const handleCancel = () => {
+
+    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+
+  };
+
  
 
 
@@ -248,7 +255,7 @@ function AssignmentEditor() {
     
     <button onClick={handleSave}  type="button" class="btn btn-danger float-end" style={{marginLeft: '20px'}}>Save</button>
     
-    <button onClick={handleSave} type="button" class="btn btn-secondary float-end">Cancel</button>
+    <button onClick={handleCancel} type="button" class="btn btn-secondary float-end">Cancel</button>
     
     </div>
 </div>
