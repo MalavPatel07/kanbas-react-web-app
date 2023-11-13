@@ -23,3 +23,5 @@ export const deleteModuleForCourse = async(moduleId) => {
   const response = await axios.delete(`${MODULE_URL}/${moduleId}`);
   return response.data;
 };
+
+
