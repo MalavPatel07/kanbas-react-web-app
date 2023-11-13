@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import db from "../../Database";
 import "../CourseNavigation/index.css";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import assignmentReducer from "./assignmentReducer";
-import { addAssignment, deleteAssignment, updateAssignment, setAssignment } from "./assignmentReducer";
-
+import { addAssignment, deleteAssignment, updateAssignment, setAssignment,setAssignments1 } from "./assignmentReducer";
+import { updateAssignmentForCourse,addAssignmentForCourse,findAssignmentById } from "./client";
 
 
 function AssignmentEditor() {
@@ -15,8 +15,26 @@ function AssignmentEditor() {
   // console.log(assignmentId)
   
 
-  const assignment = useSelector((state) => state.assignmentReducer.assignment);
-  const assignments = useSelector((state) => state.assignmentReducer.assignments);
+  // const assignment = useSelector((state) => state.assignmentReducer.assignment);
+  // const assignments = useSelector((state) => state.assignmentReducer.assignments);
+
+  const [assignments, setAssignments] = useState([]);
+  const[assignment,setAssignment] = useState([]);
+
+  const handleFetchAssignmentByID = async () => {
+    const response = await findAssignmentById(assignmentId);
+    setAssignment(response);
+  };
+
+  useEffect(() => {
+    if (assignmentId !== "AssignmentEditor") {
+      handleFetchAssignmentByID();
+    }
+    
+  }, [assignmentId]);
+  
+
+
   let assignmentTitle;
   let due;
   let description;
@@ -24,21 +42,13 @@ function AssignmentEditor() {
   let availableUntilDate;
   let points;
   if (assignmentId !== "AssignmentEditor") {
-  //   assignmentTitle = "New Assignment";
-  //   due = "2000-01-01";
-  //   description = "New Description";
-  //   availableFromDate = "2000-01-01";
-  //   availableUntilDate = "2000-01-01";
-  //   points = 0;
-  // }
-  // else {
     assignmentTitle = assignment.title;
     due = assignment.due;
     availableFromDate = assignment.availableFromDate;
     availableUntilDate = assignment.availableUntilDate;
     description = assignment.description;
     points = assignment.point;
-  }
+  } 
 
   
 
@@ -47,14 +57,30 @@ function AssignmentEditor() {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const handleUpdateAssignment = async () => {
+    const status = await updateAssignmentForCourse(assignment);
+    dispatch(updateAssignment(assignment));
+    setAssignments(assignments.map((a) => (a._id === assignment._id ? assignment : a)));
+  };
+
+
+  const handleAddAssignment = async () => {
+    const newAssignment = await addAssignmentForCourse(courseId, assignment);
+    dispatch(addAssignment(newAssignment));
+    setAssignments(assignments => [...assignments, newAssignment]);
+  };
+
   const handleSave = () => {
     if (assignmentId === "AssignmentEditor") {
    
-      dispatch(addAssignment({...assignment,course:courseId}));
+      //dispatch(addAssignment({...assignment,course:courseId}));
+      {handleAddAssignment()}
     } else {
     
       // console.log(assignment.title)
-      dispatch(updateAssignment(assignment));
+      //dispatch(updateAssignment(assignment));
+       {handleUpdateAssignment()}
       
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
@@ -66,6 +92,10 @@ function AssignmentEditor() {
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
 
   };
+
+  
+  
+
 
  
 
@@ -106,12 +136,12 @@ function AssignmentEditor() {
         <input 
         value={assignmentTitle}
         onChange={(e) => {
-          dispatch(
+        
             setAssignment({
               ...assignment,
               title: e.target.value,
             })
-          );
+          
         }}
         class="form-control float-end"
                placeholder="Assignment Name" 
@@ -119,12 +149,12 @@ function AssignmentEditor() {
     <div class="container" style={{padding: '5px'}}>
     <textarea class="form-control float-end h-20"
     onChange={(e) => {
-      dispatch(
+      
         setAssignment({
           ...assignment,
           description: e.target.value,
         })
-      );
+      
     }}
     
     >{assignment.description}</textarea></div>
@@ -137,12 +167,12 @@ function AssignmentEditor() {
           <div class="col-md-6">
             <input class="form-control" value={assignment.points} type="number" max="100" min="50" step="5"
             onChange={(e) => {
-              dispatch(
+              
                 setAssignment({
                   ...assignment,
                   points: e.target.value,
                 })
-              );
+              
             }} 
             
             />
@@ -166,12 +196,12 @@ function AssignmentEditor() {
            id="text-fields-due"
             value={due} 
             onChange={(e) => {
-              dispatch(
+              
                 setAssignment({
                   ...assignment,
                   due: e.target.value,
                 })
-              );
+              
             }}
             
             />
@@ -188,12 +218,12 @@ function AssignmentEditor() {
       id="text-fields-due"
        value={availableFromDate}
        onChange={(e) => {
-        dispatch(
+        
           setAssignment({
             ...assignment,
             availableFromDate: e.target.value,
           })
-        );
+        
       }}
         
        
@@ -213,12 +243,12 @@ function AssignmentEditor() {
       id="text-fields-due"
        value={availableUntilDate}
        onChange={(e) => {
-        dispatch(
+        
           setAssignment({
             ...assignment,
             availableUntilDate: e.target.value,
           })
-        );
+        
       }} 
        
        />

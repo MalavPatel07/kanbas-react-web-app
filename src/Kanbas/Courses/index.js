@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import { useParams, Routes, Route, Navigate, useLocation } from "react-router-dom";
 //import JsonPre from "../../Labs/a3/JsonPre";
 import db from "../Database";
@@ -11,13 +11,25 @@ import Grades from "./Grades";
 import Settings from "./Settings";
 import "./CourseNavigation/index.css"
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import axios from "axios";
 
 
-function Courses({ courses }) {
+function Courses() {
+  const API_BASE = process.env.REACT_APP_API_BASE;
   const { courseId } = useParams();
   const {pathname} = useLocation();
+  const URL = `${API_BASE}/api/courses`;
   //const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = courses.find((course) => course._id === courseId);
+  // const course = courses.find((course) => course._id === courseId);
+  const [course, setCourse] = useState({});
+  const fetchCourse = async (courseId) => {
+    const response = await axios.get(`${URL}/${courseId}`);
+    setCourse(response.data);
+  }
+
+  useEffect(() => {
+    fetchCourse(courseId);
+  }, [courseId]);
   return (
     <div  style={{width : 1300}}>
       {/* <h1>Courses {course.name} / {screen}</h1> */}

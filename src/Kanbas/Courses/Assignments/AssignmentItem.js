@@ -1,19 +1,18 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import { Link, useParams,useNavigate } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "../CourseNavigation/index.css"
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, deleteAssignment, updateAssignment, setAssignment } from "./assignmentReducer";
-
-
+import { addAssignment, deleteAssignment, updateAssignment, setAssignment,setAssignments1 } from "./assignmentReducer";
+import { findAssignmentsForCourse,deleteAssignmentForCourse } from "./client";
 
 function AssignmentItem() {
   const { courseId } = useParams();
   const { assignmentId } = useParams(); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const assignments = useSelector((state) => state.assignmentReducer.assignments);
-  const assignment = useSelector((state) => state.assignmentReducer.assignment);
+  // const assignments = useSelector((state) => state.assignmentReducer.assignments);
+  // const assignment = useSelector((state) => state.assignmentReducer.assignment);
 
 
   // const handleDeleteClick = () => {
@@ -27,6 +26,24 @@ function AssignmentItem() {
       
   //   }
   // };
+
+  const [assignment, setAssignment] = useState([]);
+  const [assignments, setAssignments] = useState([]);
+
+  const handleFetchAssignments = async () => {
+    const response = await findAssignmentsForCourse(courseId);
+    setAssignments(response);
+  };
+
+  const handleDeleteAssignment = async(assignmentId) => {
+    await deleteAssignmentForCourse(assignmentId);
+    dispatch(deleteAssignment(assignmentId));
+    setAssignments(assignments.filter((assignment) => assignment._id !== assignmentId));
+  };
+
+  useEffect(() => {
+    handleFetchAssignments();
+  }, [courseId]);
  
   return (
 
@@ -46,7 +63,7 @@ function AssignmentItem() {
                            <Link
                 to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                 style={{color: 'black'}}
-                onClick = {() => dispatch(setAssignment(assignment))}
+                onClick = {() => setAssignment(assignment)}
               >
                 {assignment.title}
               </Link>
@@ -54,7 +71,7 @@ function AssignmentItem() {
                               
                               onClick={() => 
                                 {if (window.confirm("Are you sure you want to remove the assignment?")) {
-                                  dispatch(deleteAssignment(assignment._id))}
+                                  handleDeleteAssignment(assignment._id)}
 
                                 }
                               }> 

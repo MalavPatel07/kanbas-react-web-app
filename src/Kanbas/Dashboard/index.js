@@ -1,19 +1,44 @@
 import db from "../Database";
 import { Link } from "react-router-dom";
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 //import index.css from CourseNavigation
 import '../Courses/CourseNavigation/index.css';
+import axios from "axios";
 
 
-function Dashboard({
-  courses,
-  course,
-  setCourse,
-  addNewCourse,
-  deleteCourse,
-  updateCourse,
-}) {
-  //const courses = db.courses;
+function Dashboard() {
+  const API_BASE = process.env.REACT_APP_API_BASE;
+  const URl = `${API_BASE}/api/courses`;
+  const [courses, setCourses] = useState([]);
+  const [course, setCourse] = useState({});
+  const fetchCourse = async () => {
+    const response = await axios.get(`${URl}`);
+    setCourses(response.data);
+  };
+
+
+  const deleteCourse = async (id) => {
+    const response = await axios.delete(`${URl}/${id}`);
+    setCourses(courses.filter((c) => c._id !== id));
+  };
+
+  const addNewCourse = async () => {
+    const response = await axios.post(`${URl}`, course); 
+    setCourses([...courses, response.data]);
+  };
+  
+
+  const updateCourse = async () => {
+    const response = await axios.put(`${URl}/${course._id}`, course);
+    setCourses(courses.map((c) => (c._id === course._id ? course : c)));
+    setCourse({});
+  };
+  
+
+    useEffect(() => { fetchCourse(); }, []);
+
+  
+  
   return (
     <div>
       <h1 style={{marginTop:'0px',marginLeft:'20px'}}>DASHBOARD</h1>
@@ -26,12 +51,14 @@ function Dashboard({
       <h5 style={{marginTop:'0px',marginLeft:'20px'}}>Course</h5>
       <input
         value={course.name}
+        placeholder="Course Name"
         className="form-control w-25"
         style={{marginTop:'0px',marginLeft:'20px'}}
         onChange={(e) => setCourse({ ...course, name: e.target.value })}
       />
       <input
         value={course.number}
+        placeholder="Course Number"
         className="form-control w-25"
         style={{marginTop:'0px',marginLeft:'20px'}}
         onChange={(e) => setCourse({ ...course, number: e.target.value })}
@@ -61,7 +88,7 @@ function Dashboard({
       <div className="row row-cols-1 row-cols-md-3 g-4" style={{marginLeft: '16px'}}>
         {courses.map((course, index) => (
           <div className="col" key={course._id}>
-            <div className="card mb-3" style={{width:'250px'}}>
+            <div className="card mb-3 mr-3" style={{width:'250px',marginRight:'150px'}}>
               <img src="../../labs/a1/boston.jfif" className="card-img-top" alt="..." />
               <div className="card-body">
               <button className="btn btn-warning btn-sm float-end"
@@ -71,12 +98,12 @@ function Dashboard({
                   }}
                 >
                   Edit
-                </button>
+                </button> 
                 <button className="btn btn-danger btn-sm float-end"
-                  onClick={(event) => {
-                    event.preventDefault();
+                  onClick={() => {
                     deleteCourse(course._id);
-                  }}
+                  }
+                  }
                 >
                   Delete
                 </button>
