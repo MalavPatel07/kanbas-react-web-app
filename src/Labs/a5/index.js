@@ -13,9 +13,10 @@ function Assignment5() {
              className="list-group-item">
             Welcome
           </a>
-          <EncodingParametersInURLs/>
+          
             <WorkingWithObjects/>
             <WorkingWithArrays/>
+            <EncodingParametersInURLs/>
         </div>
       </div>
     );

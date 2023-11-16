@@ -19,6 +19,10 @@ function WorkingWithObjects() {
         const response = await axios.get(`${URL}/title/${assignment.title}`);
         setAssignment(response.data);
       };
+      const setScore = async () => {
+        const response = await axios.get(`${URL}/score/${assignment.score}`);
+        setAssignment(response.data);
+      };
       useEffect(() => {
         fetchAssignment();
       }, []);
@@ -46,18 +50,26 @@ function WorkingWithObjects() {
               className="btn btn-danger mb-2">
         Fetch Assignment
       </button>
-        <a
-        href={`${URL}/score/${assignment.score}`}
-        className="btn btn-primary me-2 float-end"
-        >
-        Update Score
-        </a>
+        
         <input
         onChange={(e) => setAssignment({ ...assignment,
             score: e.target.value })}
         value={assignment.score}
         className="form-control mb-2 w-75"
         />
+
+        <button onClick={setScore}
+              className="btn btn-primary mb-2">
+        Update Score to: {assignment.score}
+      </button>
+
+        {/* <a
+        href={`${URL}/score/${assignment.score}`}
+        className="btn btn-primary"
+        >
+        Update Score
+        </a> */}
+        <br/> 
         <a
   href={`${URL}/completed/${assignment.completed}`}
   className={`btn btn-primary me-2 float-end ${

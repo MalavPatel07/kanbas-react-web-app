@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function WorkingWithArrays() {
+  const [errorMessage,setErrorMessage] = useState(null);
   const API_BASE = process.env.REACT_APP_API_BASE;
     const API = `${API_BASE}/a5/todos`;
     const [todo, setTodo] = useState({
@@ -16,17 +17,31 @@ function WorkingWithArrays() {
       const response = await axios.post(API, todo);
       setTodos([...todos, response.data]);
     };
+    
     const deleteTodo = async (todo) => {
-      const response = await axios.delete(`${API}/${todo.id}`);
-      setTodos(todos.filter((t) => t.id !== todo.id));
-    };
+        try {
+        const response = await axios.delete(`${API}/${todo.id}`);
+        setTodos(todos.filter((t) => t.id !== todo.id));
+    } catch (error) {
+      console.log(error);
+      setErrorMessage(error.response.data.message);
+    }
+  };
+    
 
     const updateTodo = async () => {
-      const response = await axios.put(
-        `${API}/${todo.id}`, todo);
-      setTodos(todos.map((t) => (
-        t.id === todo.id ? todo : t)));
-      setTodo({});
+      try {
+        const response = await axios.put(
+          `${API}/${todo.id}`, todo);
+        setTodos(todos.map((t) => (
+          t.id === todo.id ? todo : t)));
+        // setTodo([]);
+
+      } catch (error) {
+        console.log(error);
+        setErrorMessage(error.response.data.message);
+      }
+      
     };
   
 
@@ -65,15 +80,24 @@ function WorkingWithArrays() {
     return (
       <div>
         <h3>Working with Arrays</h3>
+        {
+          errorMessage &&(
+            <div className="alert alert-danger">
+              {errorMessage}
+            </div>
+          )
+        }
         <textarea
         onChange={(e) => setTodo({ ...todo,
           description: e.target.value })}
         value={todo.description} type="text"
+        className="form-control mb-2"
       />
       <input
         onChange={(e) => setTodo({
           ...todo, due: e.target.value })}
         value={todo.due} type="date"
+        className="form-control mb-2"
       />
       <label>
         <input
@@ -83,6 +107,7 @@ function WorkingWithArrays() {
         />
         Completed
       </label>
+      <br/>
       <button onClick={postTodo} >
         Post Todo
       </button>
@@ -117,12 +142,12 @@ function WorkingWithArrays() {
             <button
     onClick={() => deleteTodo(todo)}
     className="btn btn-danger float-end ms-2">
-    Delete
+    Remove
   </button>
 
   <button onClick={() => fetchTodoById(todo.id)}
-              className="btn btn-primary float-end">
-        Update Todo
+              className="btn btn-warning float-end">
+        Edit
       </button>
                 <input
               checked={todo.completed}
@@ -134,18 +159,8 @@ function WorkingWithArrays() {
           </li>
         ))}
       </ul>
-        <input
-        value={todo.id}
-        onChange={(e) => setTodo({
-          ...todo, id: e.target.value })}
-        className="form-control mb-2"
-        type="number"
-      />
-      <h3>Deleting from an Array</h3>
-      <a href={`${API}/${todo.id}/delete`}
-         className="btn btn-primary me-2">
-        Delete Todo with ID = {todo.id}
-      </a>
+        
+      
         <h4>Retrieving Arrays</h4>
         <a href={API} className="btn btn-primary me-2">
           Get Todos
@@ -160,29 +175,57 @@ function WorkingWithArrays() {
         Get Todo by ID
       </a>
       <h3>Filtering Array Items</h3>
-      <a href={`${API}/${todo.id}?completed=true`}
+      <a href={`${API}?completed=true`}
             className="btn btn-primary me-2">
             Get Completed Todos
             </a>
       <h4>Creating new Items in an Array</h4>
-        <a href={`${API_BASE}/a5/todos/create`}
+        <a href={`${API}/create`}
             className="btn btn-primary me-2">
             Create Todo
         </a>
-        <input
+
+        <h3>Deleting from an Array</h3>
+      <input
+        value={todo.id}
+        onChange={(e) => setTodo({
+          ...todo, id: e.target.value })}
+        className="form-control mb-2"
+        type="number"
+      />
+      <a href={`${API}/${todo.id}/delete`}
+         className="btn btn-primary me-2">
+        Delete Todo with ID = {todo.id}
+      </a>
+        
+      <h3>Updating an Item in an Array</h3>
+      <input
+        value={todo.id}
+        onChange={(e) => setTodo({
+          ...todo, id: e.target.value })}
+        className="form-control mb-2"
+        type="number"
+      />
+      <input
         value={todo.title}
         onChange={(e) => setTodo({
           ...todo, title: e.target.value })}
         className="form-control mb-2"
         type="text"
       />
-      <h3>Updating an Item in an Array</h3>
       <a
         href={`${API}/${todo.id}/title/${todo.title}`}
         className="btn btn-primary me-2" >
-        Update Title to {todo.title}
+        Update Title to {todo.title} for id = {todo.id}
       </a>
       <h3>Updating the description in an Array</h3>
+      <input
+        value={todo.id}
+        onChange={(e) => setTodo({
+          ...todo, id: e.target.value })}
+        className="form-control mb-2"
+        type="number"
+      />
         <input
         value={todo.description}
         onChange={(e) => setTodo({
@@ -193,9 +236,16 @@ function WorkingWithArrays() {
         <a
             href={`${API}/${todo.id}/description/${todo.description}`}
             className="btn btn-primary me-2" >
-            Update Description to {todo.description}
+            Update Description to {todo.description} for id = {todo.id}
         </a>
         <h3>Updating completed in an Array</h3>
+        <input
+        value={todo.id}
+        onChange={(e) => setTodo({
+          ...todo, id: e.target.value })}
+        className="form-control mb-2"
+        type="number"
+      />
         <input
         type = "checkbox"
         checked={todo.completed}
@@ -204,7 +254,7 @@ function WorkingWithArrays() {
         <a
             href={`${API}/${todo.id}/completed/${todo.completed}`}
             className="btn btn-primary me-2" >
-            Update Completed to {todo.completed.toString()}
+            Update Completed to {todo.completed.toString()} for id = {todo.id}
         </a>     
       </div>
     );
