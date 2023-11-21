@@ -11,6 +11,7 @@ function Dashboard() {
   const URl = `${API_BASE}/api/courses`;
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
   const fetchCourse = async () => {
     const response = await axios.get(`${URl}`);
     setCourses(response.data);
@@ -29,10 +30,20 @@ function Dashboard() {
   
 
   const updateCourse = async () => {
-    const response = await axios.put(`${URl}/${course._id}`, course);
-    setCourses(courses.map((c) => (c._id === course._id ? course : c)));
-    setCourse({});
+    try {
+      console.log(course._id);
+      const response = await axios.put(`${URl}/${course._id}`, course);
+      setCourses(courses.map((c) => (c._id === course._id ? course : c)));
+      setCourse({});
+    } catch (error) {
+      console.log(error);
+      setErrorMessage(error.response.data.message);
+    }
   };
+  //   const response = await axios.put(`${URl}/${course._id}`, course);
+  //   setCourses(courses.map((c) => (c._id === course._id ? course : c)));
+  //   setCourse({});
+  // };
   
 
     useEffect(() => { fetchCourse(); }, []);
@@ -48,7 +59,13 @@ function Dashboard() {
       <h5 style={{marginTop:'0px',marginLeft:'20px'}}>Published Courses ({courses.length})</h5>
       
       <hr style={{marginTop:'0px',marginLeft:'20px'}}/>
+      {errorMessage && (
+        <div className="alert alert-danger mb-2 mt-2">
+          {errorMessage}
+        </div>
+      )}
       <h5 style={{marginTop:'0px',marginLeft:'20px'}}>Course</h5>
+      <h6 style={{marginTop:'0px',marginLeft:'20px'}}>Course Name</h6>
       <input
         value={course.name}
         placeholder="Course Name"
@@ -56,6 +73,7 @@ function Dashboard() {
         style={{marginTop:'0px',marginLeft:'20px'}}
         onChange={(e) => setCourse({ ...course, name: e.target.value })}
       />
+      <h6 style={{marginTop:'0px',marginLeft:'20px'}}>Course Number</h6>
       <input
         value={course.number}
         placeholder="Course Number"
@@ -63,6 +81,7 @@ function Dashboard() {
         style={{marginTop:'0px',marginLeft:'20px'}}
         onChange={(e) => setCourse({ ...course, number: e.target.value })}
       />
+      <h6 style={{marginTop:'0px',marginLeft:'20px'}}>Course Start Date</h6>
       <input
         value={course.startDate}
         className="form-control w-25"
@@ -70,6 +89,7 @@ function Dashboard() {
         type="date"
         onChange={(e) => setCourse({ ...course, startDate: e.target.value })}
       />
+      <h6 style={{marginTop:'0px',marginLeft:'20px'}}>Course End Date</h6>
       <input
         value={course.endDate}
         className="form-control w-25"

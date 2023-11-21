@@ -70,9 +70,14 @@ function WorkingWithArrays() {
             };
 
     const updateTitle = async () => {
+      try {
         const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
-        setTodos(response.data);
-        };
+        setTodos(response.data);}
+        catch (error) {
+          console.log(error);
+          setErrorMessage(error.response.data.message);
+        }
+      };
     useEffect(() => {
       fetchTodos();
     }, []);
@@ -193,10 +198,14 @@ function WorkingWithArrays() {
         className="form-control mb-2"
         type="number"
       />
-      <a href={`${API}/${todo.id}/delete`}
+      {/* <a href={`${API}/${todo.id}/delete`}
          className="btn btn-primary me-2">
         Delete Todo with ID = {todo.id}
-      </a>
+      </a> */}
+      <button onClick={() => deleteTodo(todo)}
+         className="btn btn-primary me-2">
+        Delete Todo with ID = {todo.id}
+      </button>
         
       <h3>Updating an Item in an Array</h3>
       <input

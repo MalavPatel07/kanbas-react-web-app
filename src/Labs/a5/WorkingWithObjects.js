@@ -23,6 +23,12 @@ function WorkingWithObjects() {
         const response = await axios.get(`${URL}/score/${assignment.score}`);
         setAssignment(response.data);
       };
+
+      const setCompleted = async () => {
+        const response = await axios.get(`${URL}/completed/${assignment.completed}`);
+        setAssignment(response.data);
+      };
+
       useEffect(() => {
         fetchAssignment();
       }, []);
@@ -70,14 +76,21 @@ function WorkingWithObjects() {
         Update Score
         </a> */}
         <br/> 
-        <a
+        {/* <a
   href={`${URL}/completed/${assignment.completed}`}
   className={`btn btn-primary me-2 float-end ${
     assignment.completed ? 'completed' : 'not-completed'
   }`}
 >
   {assignment.completed ? 'Mark as Completed' : 'Mark as Not Completed'}
-</a>
+</a> */}
+<button onClick={setCompleted}
+  className={`btn btn-primary me-2 float-end ${
+    assignment.completed ? 'completed' : 'not-completed'
+  }`}
+>
+  {assignment.completed ? 'Mark as Completed' : 'Mark as Not Completed'}
+</button>
 <div>
   <label>
     <input
