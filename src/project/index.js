@@ -12,15 +12,18 @@ import SignIn from "./users/signin";
 import Account from "./users/account";
 import UserTable from "./users/table";
 import Signup from "./users/signup";
+import Nav from "./../nav";
 
 function Project() {
   const [key, setKey] = useState("home");
 
   return (
     <div className="container-fluid">
+        <Nav />
       <h1>Project</h1>
       <div className="row">
         <div className="col-2">
+        
           <div className="list-group">
             <Link to="/project/" className="list-group-item">
               Home
