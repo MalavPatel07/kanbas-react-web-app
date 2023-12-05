@@ -18,7 +18,7 @@ export const signout = async () => {
 
 export const account = async () => {
   const response = await request.post(`${USERS_API}/account`);
-  console.log(response)
+  // console.log(response)
   return response.data;
 };
 
